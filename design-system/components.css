@@ -1,0 +1,195 @@
+/* ==========================================================================
+   Parents Connectés — Composants
+   Dépend de tokens.css. Préfixe de classes : .pc-
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--pc-color-bg);
+  color: var(--pc-color-text-soft);
+  font-family: var(--pc-font-body);
+  font-size: var(--pc-text-md);
+  line-height: var(--pc-leading-normal);
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: var(--pc-font-display);
+  font-weight: var(--pc-weight-semibold);
+  color: var(--pc-color-text);
+  line-height: var(--pc-leading-tight);
+}
+
+.pc-container { max-width: var(--pc-container); margin: 0 auto; padding: 0 var(--pc-gutter); }
+
+/* ---------- Icônes ---------- */
+.pc-icon { width: var(--pc-icon-md); height: var(--pc-icon-md); flex: none; display: inline-block; vertical-align: middle; }
+.pc-icon--sm { width: var(--pc-icon-sm); height: var(--pc-icon-sm); }
+.pc-post__meta .pc-icon { width: 12px; height: 12px; }
+.pc-icon--lg { width: var(--pc-icon-lg); height: var(--pc-icon-lg); }
+.pc-icon--xl { width: var(--pc-icon-xl); height: var(--pc-icon-xl); }
+
+/* ---------- Texte manuscrit ---------- */
+.pc-hand { font-family: var(--pc-font-hand); color: var(--pc-color-text-soft); }
+.pc-hand--tilt { display: inline-block; transform: rotate(-6deg); }
+
+/* ---------- En-tête ---------- */
+.pc-header {
+  background: var(--pc-color-primary);
+  color: var(--pc-color-on-primary);
+  padding: var(--pc-space-3) var(--pc-gutter);
+  display: flex; align-items: center; gap: var(--pc-space-4);
+}
+.pc-header__brand { flex: 1; text-align: center; }
+.pc-header__logo {
+  font-family: var(--pc-font-display); font-weight: var(--pc-weight-semibold);
+  font-size: clamp(1.6rem, 5vw, var(--pc-text-3xl)); color: var(--pc-white); line-height: 1;
+}
+.pc-header__tagline { font-family: var(--pc-font-hand); font-size: var(--pc-text-sm); opacity: .95; }
+.pc-header__actions { display: flex; gap: var(--pc-space-2); }
+.pc-icon-btn {
+  display: inline-grid; place-items: center; width: 44px; height: 44px;
+  border: 0; border-radius: var(--pc-radius-pill); background: transparent; color: inherit; cursor: pointer;
+}
+.pc-icon-btn:hover { background: rgba(255,255,255,.14); }
+.pc-icon-btn:focus-visible, .pc-btn:focus-visible { outline: 3px solid var(--pc-yellow-500); outline-offset: 2px; }
+
+/* ---------- Héro ---------- */
+.pc-hero {
+  background: var(--pc-pink-200); border-radius: var(--pc-radius-xl);
+  padding: var(--pc-space-8) var(--pc-space-6); text-align: center;
+}
+.pc-hero__title { font-size: clamp(1.6rem, 5vw, var(--pc-text-2xl)); font-weight: var(--pc-weight-bold); }
+.pc-hero__title em { font-style: normal; color: var(--pc-blue-600); }
+.pc-hero__text { margin: var(--pc-space-3) 0 0; font-size: var(--pc-text-lg); color: var(--pc-color-text); }
+
+/* ---------- Section / bandeau ---------- */
+.pc-section { border-radius: var(--pc-radius-xl); padding: var(--pc-space-4); background: var(--pc-white); }
+.pc-section--pink     { background: var(--pc-pink-100); }
+.pc-section--green    { background: var(--pc-green-200); }
+.pc-section--lavender { background: var(--pc-lavender-100); }
+.pc-section__head {
+  display: flex; align-items: center; gap: var(--pc-space-3); flex-wrap: wrap;
+  padding: var(--pc-space-2) var(--pc-space-4); border-radius: var(--pc-radius-lg);
+  margin-bottom: var(--pc-space-4);
+}
+.pc-section__head--pink     { background: var(--pc-pink-200); }
+.pc-section__head--lavender { background: var(--pc-lavender-200); }
+.pc-section__title { font-size: var(--pc-text-xl); }
+.pc-section__aside { margin-left: auto; font-family: var(--pc-font-hand); font-size: var(--pc-text-md); }
+
+/* ---------- Carte de post (fil d'actualités) ---------- */
+.pc-feed { display: grid; gap: var(--pc-space-4); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.pc-post {
+  background: var(--pc-color-surface); border: 1px solid var(--pc-color-border);
+  border-radius: var(--pc-radius-lg); box-shadow: var(--pc-shadow-card);
+  padding: var(--pc-space-3); display: flex; flex-direction: column; gap: var(--pc-space-3);
+}
+.pc-post__author { display: flex; align-items: center; gap: var(--pc-space-2); }
+.pc-avatar {
+  width: 36px; height: 36px; border-radius: 50%; background: var(--pc-lavender-200);
+  display: grid; place-items: center; color: var(--pc-navy-900); flex: none; overflow: hidden;
+}
+.pc-post__name { font-weight: var(--pc-weight-bold); color: var(--pc-color-text); font-size: var(--pc-text-sm); line-height: 1.2; }
+.pc-post__meta { font-size: var(--pc-text-xs); color: var(--pc-color-text-muted); }
+.pc-post__author .pc-icon-btn { margin-left: auto; color: var(--pc-color-text); width: 36px; height: 36px; }
+.pc-post__media { aspect-ratio: 16 / 10; border-radius: var(--pc-radius-md); overflow: hidden; background: var(--pc-sky-100); }
+.pc-post__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pc-post__text { margin: 0; font-size: var(--pc-text-sm); }
+.pc-post__actions {
+  display: flex; align-items: center; gap: var(--pc-space-4);
+  border-top: 1px solid var(--pc-color-border); padding-top: var(--pc-space-2); margin-top: auto;
+}
+.pc-action {
+  display: inline-flex; align-items: center; gap: 6px; border: 0; background: none; padding: 4px;
+  font: inherit; font-size: var(--pc-text-sm); color: var(--pc-color-text); cursor: pointer;
+}
+.pc-action--liked .pc-icon { color: var(--pc-color-like); fill: currentColor; }
+
+/* Titre « pastille » utilisé en tête de contenu de post */
+.pc-pill-title {
+  font-family: var(--pc-font-display); font-weight: var(--pc-weight-semibold);
+  font-size: var(--pc-text-lg); text-align: center; color: var(--pc-color-text);
+  padding: var(--pc-space-2) var(--pc-space-4); border-radius: var(--pc-radius-lg);
+  background: var(--pc-pink-200);
+}
+.pc-pill-title--sky    { background: var(--pc-sky-200); }
+.pc-pill-title--green  { background: var(--pc-green-200); }
+.pc-pill-title--yellow { background: var(--pc-yellow-200); }
+
+/* ---------- Carte conseil / règle ---------- */
+.pc-rules { display: grid; gap: var(--pc-space-3); grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.pc-rule {
+  border-radius: var(--pc-radius-lg); padding: var(--pc-space-4) var(--pc-space-3);
+  text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--pc-space-3);
+  color: var(--pc-color-text);
+}
+.pc-rule--green  { background: var(--pc-green-200); }
+.pc-rule--sky    { background: var(--pc-sky-200); }
+.pc-rule--yellow { background: var(--pc-yellow-200); }
+.pc-rule--pink   { background: var(--pc-pink-200); }
+.pc-rule__label { font-family: var(--pc-font-display); font-weight: var(--pc-weight-semibold); }
+.pc-rule__text  { font-family: var(--pc-font-display); font-weight: 500; font-size: var(--pc-text-md); line-height: 1.3; margin: 0; }
+
+/* ---------- Défi de la semaine ---------- */
+.pc-challenge__highlight {
+  display: inline-block; background: var(--pc-yellow-200); padding: 2px var(--pc-space-3);
+  border-radius: var(--pc-radius-sm); font-family: var(--pc-font-display); font-weight: var(--pc-weight-semibold);
+  font-size: var(--pc-text-lg); color: var(--pc-color-text); transform: rotate(-1.5deg);
+}
+.pc-checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--pc-space-2); }
+.pc-check { display: flex; align-items: center; gap: var(--pc-space-2); cursor: pointer; color: var(--pc-color-text); }
+.pc-check input {
+  appearance: none; width: 20px; height: 20px; margin: 0; flex: none;
+  border: 2px solid var(--pc-navy-900); border-radius: 5px; display: grid; place-items: center; cursor: pointer;
+}
+.pc-check input:checked { background: var(--pc-color-success); border-color: var(--pc-color-success); }
+.pc-check input:checked::after { content: ""; width: 5px; height: 10px; border: solid #fff; border-width: 0 2.5px 2.5px 0; transform: translateY(-1px) rotate(45deg); }
+
+/* ---------- Note manuscrite (post-it) ---------- */
+.pc-sticky {
+  display: inline-block; background: var(--pc-pink-200); padding: var(--pc-space-1) var(--pc-space-3);
+  font-family: var(--pc-font-hand); color: var(--pc-color-text); transform: rotate(-6deg);
+  border-radius: 4px; box-shadow: var(--pc-shadow-card);
+}
+
+/* ---------- Quiz ---------- */
+.pc-quiz { background: var(--pc-white); border-radius: var(--pc-radius-lg); padding: var(--pc-space-4); display: grid; gap: var(--pc-space-3); }
+.pc-quiz__question {
+  display: flex; gap: var(--pc-space-2); align-items: flex-start; background: var(--pc-pink-200);
+  border-radius: var(--pc-radius-md); padding: var(--pc-space-3); font-weight: var(--pc-weight-bold); color: var(--pc-color-text);
+}
+.pc-quiz__question .pc-icon { color: var(--pc-blue-700); }
+.pc-radio { display: flex; align-items: center; gap: var(--pc-space-2); font-family: var(--pc-font-display); font-size: var(--pc-text-lg); color: var(--pc-color-text); cursor: pointer; }
+.pc-radio input {
+  appearance: none; width: 22px; height: 22px; margin: 0; border: 2px solid var(--pc-navy-900); border-radius: 50%; display: grid; place-items: center; cursor: pointer;
+}
+.pc-radio input:checked::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--pc-blue-700); }
+.pc-quiz__answer { background: var(--pc-lavender-100); border-radius: var(--pc-radius-md); padding: var(--pc-space-3); font-size: var(--pc-text-sm); }
+.pc-quiz__answer strong { display: block; color: var(--pc-color-like); font-family: var(--pc-font-display); font-size: var(--pc-text-lg); }
+
+/* ---------- Boutons ---------- */
+.pc-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--pc-space-2);
+  min-height: 44px; padding: var(--pc-space-2) var(--pc-space-5); border: 0; border-radius: var(--pc-radius-md);
+  background: var(--pc-color-primary); color: var(--pc-color-on-primary);
+  font: inherit; font-weight: var(--pc-weight-bold); cursor: pointer; text-decoration: none;
+}
+.pc-btn:hover { background: var(--pc-color-primary-hover); }
+.pc-btn--pill { border-radius: var(--pc-radius-pill); }
+.pc-btn--soft { background: var(--pc-blue-100); color: var(--pc-blue-700); }
+
+/* ---------- Liste « À retenir » ---------- */
+.pc-takeaways { list-style: none; margin: 0; padding: var(--pc-space-4); display: grid; gap: var(--pc-space-3); background: var(--pc-white); border-radius: var(--pc-radius-lg); }
+.pc-takeaways li { display: flex; gap: var(--pc-space-2); align-items: flex-start; color: var(--pc-color-text); font-size: var(--pc-text-sm); }
+.pc-takeaways .pc-icon { color: var(--pc-color-success); }
+
+/* ---------- Pied de page ---------- */
+.pc-footer {
+  display: flex; align-items: center; gap: var(--pc-space-4); flex-wrap: wrap;
+  padding: var(--pc-space-4) var(--pc-gutter); color: var(--pc-color-text);
+}
+.pc-footer__quote { flex: 1; font-family: var(--pc-font-hand); font-size: var(--pc-text-lg); }
+.pc-footer__brand { display: flex; align-items: center; gap: var(--pc-space-2); font-weight: var(--pc-weight-bold); }

@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Parents Connectés — Design tokens
+   Extraits de la maquette : en-tête bleu roi, cartes pastel, texte bleu nuit,
+   coins très arrondis, typographie ronde et touches manuscrites.
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Patrick+Hand&display=swap");
+
+:root {
+  /* ---------- Couleurs de marque ---------- */
+  --pc-blue-700: #1648a8;   /* en-tête, boutons, liens forts            */
+  --pc-blue-600: #1f5bc6;   /* survol / accents « 2 à 4 ans »            */
+  --pc-blue-100: #dbe6fb;   /* fonds de badges bleus                     */
+  --pc-navy-900: #14215a;   /* titres et texte principal                 */
+  --pc-navy-700: #2b3a72;   /* texte courant                             */
+  --pc-gray-500: #6b7393;   /* méta (« Aujourd'hui », « Hier »)          */
+  --pc-gray-200: #e3e6ef;   /* bordures de cartes                        */
+  --pc-white:    #ffffff;
+  --pc-paper:    #fbfaf7;   /* fond de page légèrement crème             */
+
+  /* ---------- Pastels (cartes, bandeaux, règles) ---------- */
+  --pc-pink-200:     #f9d3dc;  /* bandeau héro, règle 4, question quiz      */
+  --pc-pink-100:     #fde8ed;
+  --pc-sky-200:      #c9dcf6;  /* règle 2, titre post « coucher »          */
+  --pc-sky-100:      #e6effc;
+  --pc-green-200:    #cfe8bf;  /* règle 1, défi de la semaine               */
+  --pc-green-100:    #e8f4df;
+  --pc-yellow-200:   #fbe78f;  /* règle 3, surligneur « Une soirée… »       */
+  --pc-yellow-100:   #fdf4c8;
+  --pc-lavender-200: #dcd6f5;  /* quiz, « À retenir »                       */
+  --pc-lavender-100: #efecfb;
+
+  /* ---------- Accents ---------- */
+  --pc-red-500:    #e0384f;   /* cœur « J'aime »                          */
+  --pc-green-500:  #3aa84a;   /* coches « À retenir »                     */
+  --pc-yellow-500: #f2c230;   /* ampoule, étoile, lune                    */
+  --pc-orange-500: #f29a2e;   /* traits de « rayonnement »                */
+  --pc-leaf-500:   #3f8f6b;   /* plantes décoratives                      */
+
+  /* ---------- Rôles sémantiques ---------- */
+  --pc-color-bg:          var(--pc-paper);
+  --pc-color-surface:     var(--pc-white);
+  --pc-color-text:        var(--pc-navy-900);
+  --pc-color-text-soft:   var(--pc-navy-700);
+  --pc-color-text-muted:  var(--pc-gray-500);
+  --pc-color-primary:     var(--pc-blue-700);
+  --pc-color-primary-hover: var(--pc-blue-600);
+  --pc-color-on-primary:  var(--pc-white);
+  --pc-color-border:      var(--pc-gray-200);
+  --pc-color-like:        var(--pc-red-500);
+  --pc-color-success:     var(--pc-green-500);
+
+  /* ---------- Typographie ---------- */
+  --pc-font-display: "Fredoka", "Baloo 2", "Nunito", system-ui, sans-serif;
+  --pc-font-body:    "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --pc-font-hand:    "Patrick Hand", "Caveat", "Comic Sans MS", cursive;
+
+  --pc-text-xs:   0.8125rem; /* 13px — méta                         */
+  --pc-text-sm:   0.9375rem; /* 15px — texte de carte               */
+  --pc-text-md:   1rem;      /* 16px — texte courant                */
+  --pc-text-lg:   1.25rem;   /* 20px — titre de carte               */
+  --pc-text-xl:   1.625rem;  /* 26px — titre de section             */
+  --pc-text-2xl:  2.25rem;   /* 36px — titre héro                   */
+  --pc-text-3xl:  2.75rem;   /* 44px — logo                         */
+
+  --pc-weight-regular: 400;
+  --pc-weight-semibold: 600;
+  --pc-weight-bold: 700;
+  --pc-weight-black: 800;
+
+  --pc-leading-tight: 1.15;
+  --pc-leading-normal: 1.5;
+
+  /* ---------- Espacements (base 4px) ---------- */
+  --pc-space-1: 4px;
+  --pc-space-2: 8px;
+  --pc-space-3: 12px;
+  --pc-space-4: 16px;
+  --pc-space-5: 20px;
+  --pc-space-6: 24px;
+  --pc-space-8: 32px;
+  --pc-space-10: 40px;
+
+  /* ---------- Rayons ---------- */
+  --pc-radius-sm: 8px;     /* badges, cases à cocher            */
+  --pc-radius-md: 14px;    /* images dans les posts, boutons    */
+  --pc-radius-lg: 20px;    /* cartes                            */
+  --pc-radius-xl: 28px;    /* bandeaux / sections               */
+  --pc-radius-pill: 999px; /* titres-pastilles, bouton CTA      */
+
+  /* ---------- Ombres ---------- */
+  --pc-shadow-card: 0 2px 6px rgba(20, 33, 90, 0.06), 0 1px 2px rgba(20, 33, 90, 0.04);
+  --pc-shadow-raised: 0 8px 24px rgba(20, 33, 90, 0.10);
+
+  /* ---------- Icônes ---------- */
+  --pc-icon-sm: 18px;
+  --pc-icon-md: 24px;
+  --pc-icon-lg: 40px;
+  --pc-icon-xl: 64px;
+
+  /* ---------- Mise en page ---------- */
+  --pc-container: 1120px;
+  --pc-gutter: 16px;
+}
