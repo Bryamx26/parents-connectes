@@ -56,7 +56,7 @@ Chaque pastel a une variante plus claire en `-100` pour les grands fonds.
 |---|---|
 | En-tête | `.pc-header`, `__brand`, `__logo`, `__tagline`, `__actions`, `.pc-icon-btn` |
 | Héro | `.pc-hero`, `__title` (avec `<em>` pour l'accent bleu), `__text` ; `--split` (texte + illustration) avec `__content`, `__deco`, `__media`, `__note` |
-| Section | `.pc-section` (`--pink`, `--green`, `--lavender`), `__head`, `__title`, `__aside` |
+| Section | `.pc-section` (`--pink`, `--green`, `--lavender`), `__head`, `__art` (petit dessin en couleur à la place de l'icône), `__title`, `__aside` |
 | Post du fil | `.pc-feed` > `.pc-post`, `__author`, `.pc-avatar`, `__media`, `.pc-pill-title` (`--sky`, `--green`, `--yellow`), `__text`, `__actions`, `.pc-action` (`--liked`) |
 | Règle / conseil | `.pc-rules` > `.pc-rule` (`--green`, `--sky`, `--yellow`, `--pink`), `__label`, `__text` |
 | Défi de la semaine | `.pc-challenge__highlight`, `__body`, `__art`, `.pc-checklist`, `.pc-check`, `.pc-sticky` |
@@ -72,7 +72,8 @@ Chaque pastel a une variante plus claire en `-100` pour les grands fonds.
 ## Illustrations
 
 Dans `assets/illustrations/`, style dessin au crayon (trait bleu nuit tremblé, aplats pastel qui débordent un peu) :
-parent-child-reading (héro), building-blocks, sleeping-child, child-drawing (posts, format 16/10), kids-reading (défi).
+parent-child-reading (héro), building-blocks, sleeping-child, child-drawing (posts, format 16/10), trophy et bulb (titres « Défi de la semaine » et « Nos conseils »).
+`kids-reading-book.webp` (défi) est l'illustration de la maquette, détourée.
 À afficher en `<img>` avec un `alt` descriptif.
 
 ## Icônes

@@ -78,6 +78,7 @@ h1, h2, h3, h4 {
 .pc-section__head--pink     { background: var(--pc-pink-200); }
 .pc-section__head--lavender { background: var(--pc-lavender-200); }
 .pc-section__title { font-size: var(--pc-text-xl); }
+.pc-section__art { width: var(--pc-icon-lg); height: var(--pc-icon-lg); flex: none; }
 .pc-section__aside { margin-left: auto; font-family: var(--pc-font-hand); font-size: var(--pc-text-md); }
 
 /* ---------- Carte de post (fil d'actualités) ---------- */
@@ -257,7 +258,7 @@ h1, h2, h3, h4 {
 /* Défi : liste + illustration */
 .pc-challenge__body { display: grid; gap: var(--pc-space-4); }
 .pc-challenge__art { margin: 0; display: grid; justify-items: center; gap: var(--pc-space-2); }
-.pc-challenge__art img { display: block; width: 100%; max-width: 220px; height: auto; }
+.pc-challenge__art img { display: block; width: 100%; max-width: 260px; height: auto; }
 .pc-challenge__success { margin-top: var(--pc-space-4); }
 .pc-challenge__heart { color: var(--pc-color-like); display: inline-flex; }
 @media (min-width: 480px) {

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true">
+<defs><filter id="crayon" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="1.8" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="wash" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" seed="9"/><feDisplacementMap in="SourceGraphic" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+<g stroke-linecap="round" stroke-linejoin="round">
+<path d="M18 9h28v14c0 9-6 15-14 15s-14-6-14-15z M29 38h6v8h-6z M20 52c0-4 4-6 12-6s12 2 12 6v3H20z" fill="#f2c230" transform="translate(1.2 1)" filter="url(#wash)"/>
+<path d="M18 9h28v14c0 9-6 15-14 15s-14-6-14-15z" fill="none" stroke="#14215a" stroke-width="2.6" filter="url(#crayon)"/>
+<path d="M18 13H11c0 8 4 12 9 13M46 13h7c0 8-4 12-9 13" fill="none" stroke="#14215a" stroke-width="2.6" filter="url(#crayon)"/>
+<path d="M29 38v8M35 38v8M20 52c0-4 4-6 12-6s12 2 12 6v3H20z" fill="none" stroke="#14215a" stroke-width="2.6" filter="url(#crayon)"/>
+<path d="M17.5 9.5h28M19 14c.5 9 5 14 13 15" fill="none" stroke="#14215a" stroke-width="1" opacity=".4" transform="translate(-1 .8)"/>
+<path d="M24 14v8c0 4 2 7 4 8" fill="none" stroke="#fff" stroke-width="2.4" opacity=".8" filter="url(#crayon)"/>
+<path d="M54 4l-3 4M58 11l-4 1M8 5l3 4" fill="none" stroke="#f29a2e" stroke-width="2.2" filter="url(#crayon)"/>
+</g>
+</svg>

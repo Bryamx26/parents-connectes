@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Icon from './Icon.jsx';
-import { challengeArt } from '../illustrations.js';
+import { challengeArt, sectionArt } from '../illustrations.js';
 
 const ideas = ['Lire une histoire', 'Faire un puzzle', 'Dessiner', 'Jouer à cacher un objet'];
 
@@ -12,7 +12,7 @@ export default function Challenge() {
   return (
     <section className="pc-section pc-section--green" id="defi" aria-labelledby="defi-titre">
       <div className="pc-section__head pc-challenge__head">
-        <span style={{ color: 'var(--pc-yellow-500)' }}><Icon name="trophy" size="lg" /></span>
+        <img className="pc-section__art" src={sectionArt.trophy} alt="" width="40" height="40" />
         <h2 className="pc-section__title" id="defi-titre">Défi de la semaine</h2>
         <span className="pc-section__aside">{count}/{ideas.length} idées</span>
       </div>
@@ -35,7 +35,7 @@ export default function Challenge() {
             </ul>
           </div>
           <figure className="pc-challenge__art">
-            <img src={challengeArt.src} alt={challengeArt.alt} width="220" height="170" />
+            <img src={challengeArt.src} alt={challengeArt.alt} width="466" height="346" />
             <figcaption className="pc-sticky">Petits gestes, grands bienfaits !</figcaption>
           </figure>
         </div>
