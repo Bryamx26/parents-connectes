@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Icon from './Icon.jsx';
+import { postArt } from '../illustrations.js';
 
 function when(date) {
   const days = Math.floor((Date.now() - new Date(date)) / 864e5);
@@ -10,6 +11,7 @@ function when(date) {
 
 function Post({ post }) {
   const [liked, setLiked] = useState(false);
+  const art = postArt[post.icon];
   return (
     <article className="pc-post">
       <div className="pc-post__author">
@@ -20,9 +22,15 @@ function Post({ post }) {
         </div>
         <button className="pc-icon-btn" type="button" aria-label="Plus d'options"><Icon name="more" /></button>
       </div>
-      <div className={`pc-post__media pc-post__media--illus pc-post__media--${post.theme}`}>
-        <Icon name={post.icon} size="xl" />
-      </div>
+      {art ? (
+        <div className={`pc-post__media pc-post__media--${post.theme}`}>
+          <img src={art.src} alt={art.alt} width="320" height="200" loading="lazy" />
+        </div>
+      ) : (
+        <div className={`pc-post__media pc-post__media--illus pc-post__media--${post.theme}`}>
+          <Icon name={post.icon} size="xl" />
+        </div>
+      )}
       <h3 className={`pc-pill-title pc-pill-title--${post.theme}`}>{post.title}</h3>
       <p className="pc-post__text">{post.body}</p>
       <div className="pc-post__actions">
@@ -33,6 +41,7 @@ function Post({ post }) {
           <Icon name="heart" /> J'aime
         </button>
         <button className="pc-action" type="button"><Icon name="comment" /> Commenter</button>
+        <button className="pc-action pc-action--end" type="button" aria-label="Partager ou enregistrer"><Icon name="more" /></button>
       </div>
     </article>
   );

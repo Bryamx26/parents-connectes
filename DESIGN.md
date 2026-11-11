@@ -76,7 +76,7 @@ Le HTML de référence de chaque composant est dans `design-system/index.html` :
 
 ## Images
 
-Photos chaleureuses de parents et de jeunes enfants, lumière douce. Dans un post : ratio 16/10, `--pc-radius-md`, `object-fit: cover`. Pas d'enfant devant un écran mis en avant de façon positive.
+Par défaut, illustrations dessinées de `assets/illustrations/` (trait au crayon bleu nuit, aplats pastel). Pour une nouvelle illustration, garder ce style : même filtre de tremblement, mêmes couleurs que les tokens. Sinon, photos chaleureuses de parents et de jeunes enfants, lumière douce. Dans un post : ratio 16/10, `--pc-radius-md`, `object-fit: cover`. Pas d'enfant devant un écran mis en avant de façon positive.
 
 ## À éviter
 

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Icon from './Icon.jsx';
+import { challengeArt } from '../illustrations.js';
 
 const ideas = ['Lire une histoire', 'Faire un puzzle', 'Dessiner', 'Jouer à cacher un objet'];
 
@@ -17,26 +18,32 @@ export default function Challenge() {
       </div>
       <p className="pc-challenge__goal"><span className="pc-challenge__highlight">Une soirée sans écran !</span></p>
       <div className="pc-challenge__card">
-        <p className="pc-challenge__lead">À la place :</p>
-        <ul className="pc-checklist">
-          {ideas.map((idea, i) => (
-            <li key={idea}>
-              <label className="pc-check">
-                <input
-                  type="checkbox" checked={done[i]}
-                  onChange={() => setDone(done.map((d, j) => (j === i ? !d : d)))}
-                /> {idea}
-              </label>
-            </li>
-          ))}
-          <li className="pc-challenge__success">
-            <label className="pc-check">
-              <input type="checkbox" checked={success} onChange={() => setSuccess(!success)} />
-              <strong>Nous avons réussi le défi !</strong>
-            </label>
-          </li>
-        </ul>
-        <p className="pc-challenge__note"><span className="pc-sticky">Petits gestes, grands bienfaits !</span></p>
+        <div className="pc-challenge__body">
+          <div>
+            <p className="pc-challenge__lead">À la place :</p>
+            <ul className="pc-checklist">
+              {ideas.map((idea, i) => (
+                <li key={idea}>
+                  <label className="pc-check">
+                    <input
+                      type="checkbox" checked={done[i]}
+                      onChange={() => setDone(done.map((d, j) => (j === i ? !d : d)))}
+                    /> {idea}
+                  </label>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <figure className="pc-challenge__art">
+            <img src={challengeArt.src} alt={challengeArt.alt} width="220" height="170" />
+            <figcaption className="pc-sticky">Petits gestes, grands bienfaits !</figcaption>
+          </figure>
+        </div>
+        <label className="pc-check pc-challenge__success">
+          <input type="checkbox" checked={success} onChange={() => setSuccess(!success)} />
+          <strong>Nous avons réussi le défi !</strong>
+          <span className="pc-challenge__heart"><Icon name="heart" /></span>
+        </label>
       </div>
     </section>
   );

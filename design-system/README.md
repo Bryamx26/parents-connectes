@@ -55,15 +55,25 @@ Chaque pastel a une variante plus claire en `-100` pour les grands fonds.
 | Composant | Classes |
 |---|---|
 | En-tête | `.pc-header`, `__brand`, `__logo`, `__tagline`, `__actions`, `.pc-icon-btn` |
-| Héro | `.pc-hero`, `__title` (avec `<em>` pour l'accent bleu), `__text` |
+| Héro | `.pc-hero`, `__title` (avec `<em>` pour l'accent bleu), `__text` ; `--split` (texte + illustration) avec `__content`, `__deco`, `__media`, `__note` |
 | Section | `.pc-section` (`--pink`, `--green`, `--lavender`), `__head`, `__title`, `__aside` |
 | Post du fil | `.pc-feed` > `.pc-post`, `__author`, `.pc-avatar`, `__media`, `.pc-pill-title` (`--sky`, `--green`, `--yellow`), `__text`, `__actions`, `.pc-action` (`--liked`) |
 | Règle / conseil | `.pc-rules` > `.pc-rule` (`--green`, `--sky`, `--yellow`, `--pink`), `__label`, `__text` |
-| Défi de la semaine | `.pc-challenge__highlight`, `.pc-checklist`, `.pc-check`, `.pc-sticky` |
-| Quiz | `.pc-quiz`, `__question`, `.pc-radio`, `__answer` |
+| Défi de la semaine | `.pc-challenge__highlight`, `__body`, `__art`, `.pc-checklist`, `.pc-check`, `.pc-sticky` |
+| Quiz | `.pc-quiz`, `__question`, `.pc-radio`, `__answer` ; `--split` (question à gauche, réponse à droite) avec `__form`, `__side`, `__hint`, `__deco` |
 | À retenir | `.pc-takeaways` (icône `check-circle`) |
 | Boutons | `.pc-btn`, `--pill`, `--soft` |
 | Pied de page | `.pc-footer`, `__quote`, `__brand` |
+
+## Mise en page
+
+`.pc-page` (pile de sections), `.pc-duo` (deux colonnes égales), `.pc-duo--wide` (3/5 + 2/5 dès 900 px).
+
+## Illustrations
+
+Dans `assets/illustrations/`, style dessin au crayon (trait bleu nuit tremblé, aplats pastel qui débordent un peu) :
+parent-child-reading (héro), building-blocks, sleeping-child, child-drawing (posts, format 16/10), kids-reading (défi).
+À afficher en `<img>` avec un `alt` descriptif.
 
 ## Icônes
 

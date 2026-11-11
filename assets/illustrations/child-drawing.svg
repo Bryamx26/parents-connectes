@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-labelledby="t">
+<title id="t">Un enfant dessine avec des crayons de couleur</title>
+<defs>
+<filter id="crayon" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="3.2" xChannelSelector="R" yChannelSelector="G"/></filter>
+<filter id="wash" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="14"/><feDisplacementMap in="SourceGraphic" scale="7" xChannelSelector="R" yChannelSelector="G"/></filter>
+<pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(40)"><path d="M0 0v7" stroke="#14215a" stroke-width="1.1" opacity=".28"/></pattern>
+</defs>
+<g stroke-linecap="round" stroke-linejoin="round">
+<path d="M0 0 H320 V200 H0z" fill="#e8f4df" filter="url(#wash)"/>
+<path d="M24 52 h80" fill="none" stroke="#14215a" stroke-width="2.4" filter="url(#crayon)"/>
+<path d="M34 28 h12 v24 h-12z" fill="#f9d3dc" transform="translate(2.5 2)" filter="url(#wash)"/>
+<path d="M34 28 h12 v24 h-12z" fill="none" stroke="#14215a" stroke-width="2.3" filter="url(#crayon)"/>
+<path d="M34 28 h12 v24 h-12z" fill="none" stroke="#14215a" stroke-width=".9" opacity=".45" transform="translate(-1.2 .8)"/>
+<path d="M48 32 h10 v20 h-10z" fill="#c9dcf6" transform="translate(2.5 2)" filter="url(#wash)"/>
+<path d="M48 32 h10 v20 h-10z" fill="none" stroke="#14215a" stroke-width="2.3" filter="url(#crayon)"/>
+<path d="M48 32 h10 v20 h-10z" fill="none" stroke="#14215a" stroke-width=".9" opacity=".45" transform="translate(-1.2 .8)"/>
+<path d="M64 36 a10 10 0 1 0 0.1 0z" fill="#cfe8bf" transform="translate(2.5 2)" filter="url(#wash)"/>
+<path d="M64 36 a10 10 0 1 0 0.1 0z" fill="none" stroke="#14215a" stroke-width="2.3" filter="url(#crayon)"/>
+<path d="M64 36 a10 10 0 1 0 0.1 0z" fill="none" stroke="#14215a" stroke-width=".9" opacity=".45" transform="translate(-1.2 .8)"/>
+<path d="M264 82 h14 v10 h-14z" fill="#ffffff" transform="translate(2.5 2)" filter="url(#wash)"/>
+<path d="M264 82 h14 v10 h-14z" fill="none" stroke="#14215a" stroke-width="2.3" filter="url(#crayon)"/>
+<path d="M264 82 h14 v10 h-14z" fill="none" stroke="#14215a" stroke-width=".9" opacity=".45" transform="translate(-1.2 .8)"/>
+<path d="M271 40 a17 17 0 0 1 10 31 v9 h-20 v-9 a17 17 0 0 1 10 -31z" fill="#f2c230" transform="translate(2.5 2)" filter="url(#wash)"/>
+<path d="M271 40 a17 17 0 0 1 10 31 v9 h-20 v-9 a17 17 0 0 1 10 -31z" fill="none" stroke="#14215a" stroke-width="2.3" filter="url(#crayon)"/>
+<path d="M271 40 a17 17 0 0 1 10 31 v9 h-20 v-9 a17 17 0 0 1 10 -31z" fill="none" stroke="#14215a" stroke-width=".9" opacity=".45" transform="translate(-1.2 .8)"/>
+<path d="M286 22 l1.0 -5.0 M294 26 l5.0 -3.0 M296 34 l6.0 1.0" fill="none" stroke="#14215a" stroke-width="2.2" filter="url(#crayon)"/>
+<path d="M86 200 C80 150 104 120 140 116 C178 120 196 150 192 200z" fill="#ffffff" transform="translate(2.5 2)" filter="url(#wash)"/>
+<path d="M86 200 C80 150 104 120 140 116 C178 120 196 150 192 200z" fill="none" stroke="#14215a" stroke-width="2.3" filter="url(#crayon)"/>
+<path d="M86 200 C80 150 104 120 140 116 C178 120 196 150 192 200z" fill="none" stroke="#14215a" stroke-width=".9" opacity=".45" transform="translate(-1.2 .8)"/>
+<path d="M96 150 h88 M92 170 h96" fill="none" stroke="#f9d3dc" stroke-width="4" filter="url(#crayon)"/>
+<path d="M112 90 C104 58 120 42 142 42 C166 42 178 58 172 90z" fill="#8a5a3c" transform="translate(2.5 2)" filter="url(#wash)"/>
+<path d="M112 90 C104 58 120 42 142 42 C166 42 178 58 172 90z" fill="none" stroke="#14215a" stroke-width="2.3" filter="url(#crayon)"/>
+<path d="M112 90 C104 58 120 42 142 42 C166 42 178 58 172 90z" fill="none" stroke="#14215a" stroke-width=".9" opacity=".45" transform="translate(-1.2 .8)"/>
+<path d="M110 78 a30 30 0 1 0 60 0 a30 30 0 1 0 -60 0" fill="#fbe0cf" transform="translate(2.5 2)" filter="url(#wash)"/>
+<path d="M110 78 a30 30 0 1 0 60 0 a30 30 0 1 0 -60 0" fill="none" stroke="#14215a" stroke-width="2.3" filter="url(#crayon)"/>
+<path d="M110 78 a30 30 0 1 0 60 0 a30 30 0 1 0 -60 0" fill="none" stroke="#14215a" stroke-width=".9" opacity=".45" transform="translate(-1.2 .8)"/>
+<path d="M112 74 C112 52 128 44 142 44 C158 44 172 54 170 74 C160 62 142 58 126 66 C120 69 116 72 112 74z" fill="#8a5a3c" transform="translate(2.5 2)" filter="url(#wash)"/>
+<path d="M112 74 C112 52 128 44 142 44 C158 44 172 54 170 74 C160 62 142 58 126 66 C120 69 116 72 112 74z" fill="none" stroke="#14215a" stroke-width="2.3" filter="url(#crayon)"/>
+<path d="M112 74 C112 52 128 44 142 44 C158 44 172 54 170 74 C160 62 142 58 126 66 C120 69 116 72 112 74z" fill="none" stroke="#14215a" stroke-width=".9" opacity=".45" transform="translate(-1.2 .8)"/>
+<path d="M128.0 81.6 q6.6 5.9399999999999995 13.2 0" fill="none" stroke="#14215a" stroke-width="2.2" filter="url(#crayon)"/>
+<path d="M125.1 90.6 a4 3 0 1 0 8 0 a4 3 0 1 0 -8 0" fill="#f4a7b4" opacity=".75" filter="url(#wash)"/>
+<path d="M150.8 81.6 q6.6 5.9399999999999995 13.2 0" fill="none" stroke="#14215a" stroke-width="2.2" filter="url(#crayon)"/>
+<path d="M159.9 90.6 a4 3 0 1 0 8 0 a4 3 0 1 0 -8 0" fill="#f4a7b4" opacity=".75" filter="url(#wash)"/>
+<path d="M140.0 91.5 q6.0 6.6 12.0 0" fill="none" stroke="#14215a" stroke-width="2.2" filter="url(#crayon)"/>
+<path d="M10 160 L310 150 L316 200 L4 200z" fill="#fdf4c8" transform="translate(2.5 2)" filter="url(#wash)"/>
+<path d="M10 160 L310 150 L316 200 L4 200z" fill="none" stroke="#14215a" stroke-width="2.3" filter="url(#crayon)"/>
+<path d="M10 160 L310 150 L316 200 L4 200z" fill="none" stroke="#14215a" stroke-width=".9" opacity=".45" transform="translate(-1.2 .8)"/>
+<path d="M150 156 L276 150 L282 192 L156 196z" fill="#ffffff" transform="translate(2.5 2)" filter="url(#wash)"/>
+<path d="M150 156 L276 150 L282 192 L156 196z" fill="none" stroke="#14215a" stroke-width="2.3" filter="url(#crayon)"/>
+<path d="M150 156 L276 150 L282 192 L156 196z" fill="none" stroke="#14215a" stroke-width=".9" opacity=".45" transform="translate(-1.2 .8)"/>
+<path d="M176 178 c8 -18 22 -18 26 0 c4 14 18 12 22 -2" fill="none" stroke="#c9dcf6" stroke-width="3" filter="url(#crayon)"/>
+<path d="M236 166 a8 8 0 1 0 0.1 0" fill="none" stroke="#e0384f" stroke-width="2.4" filter="url(#crayon)"/>
+<path d="M176 138 C184 150 190 160 200 168" fill="none" stroke="#14215a" stroke-width="20.6" filter="url(#crayon)"/>
+<path d="M176 138 C184 150 190 160 200 168" fill="none" stroke="#ffffff" stroke-width="16" filter="url(#crayon)"/>
+<path d="M196 164 C200 168 204 172 208 174" fill="none" stroke="#14215a" stroke-width="15.6" filter="url(#crayon)"/>
+<path d="M196 164 C200 168 204 172 208 174" fill="none" stroke="#fbe0cf" stroke-width="11" filter="url(#crayon)"/>
+<path d="M206 154 l10 26" fill="none" stroke="#e0384f" stroke-width="5" filter="url(#crayon)"/>
+<path d="M208 174 a7 7 0 1 0 0.1 0z" fill="#fbe0cf" transform="translate(2.5 2)" filter="url(#wash)"/>
+<path d="M208 174 a7 7 0 1 0 0.1 0z" fill="none" stroke="#14215a" stroke-width="2.3" filter="url(#crayon)"/>
+<path d="M208 174 a7 7 0 1 0 0.1 0z" fill="none" stroke="#14215a" stroke-width=".9" opacity=".45" transform="translate(-1.2 .8)"/>
+<path d="M40 178 l-6 18" fill="none" stroke="#e0384f" stroke-width="5" filter="url(#crayon)"/>
+<path d="M52 177 l-6 18" fill="none" stroke="#f2c230" stroke-width="5" filter="url(#crayon)"/>
+<path d="M64 176 l-6 18" fill="none" stroke="#c9dcf6" stroke-width="5" filter="url(#crayon)"/>
+<path d="M76 175 l-6 18" fill="none" stroke="#cfe8bf" stroke-width="5" filter="url(#crayon)"/>
+</g></svg>
