@@ -1,4 +1,5 @@
 import Header from './components/Header.jsx';
+import Hero from './components/Hero.jsx';
 import Feed from './components/Feed.jsx';
 import Rules from './components/Rules.jsx';
 import Challenge from './components/Challenge.jsx';
@@ -11,17 +12,16 @@ export default function App() {
     <>
       <Header />
       <main className="pc-container pc-page">
-        <section className="pc-hero">
-          <h1 className="pc-hero__title">Les écrans chez les enfants<br />de <em>0 à 3 ans</em></h1>
-          <p className="pc-hero__text">Informer les parents pour accompagner leur enfant vers un usage équilibré des écrans.</p>
-        </section>
+        <Hero />
         <Feed />
-        <Rules />
-        <div className="pc-duo">
+        <div className="pc-duo pc-duo--wide">
+          <Rules />
           <Challenge />
-          <Quiz />
         </div>
-        <Takeaways />
+        <div className="pc-duo">
+          <Quiz />
+          <Takeaways />
+        </div>
       </main>
       <Footer />
     </>

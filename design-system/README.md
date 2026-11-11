@@ -55,15 +55,24 @@ Chaque pastel a une variante plus claire en `-100` pour les grands fonds.
 | Composant | Classes |
 |---|---|
 | En-tête | `.pc-header`, `__brand`, `__logo`, `__tagline`, `__actions`, `.pc-icon-btn` |
-| Héro | `.pc-hero`, `__title` (avec `<em>` pour l'accent bleu), `__text` |
-| Section | `.pc-section` (`--pink`, `--green`, `--lavender`), `__head`, `__title`, `__aside` |
+| Héro | `.pc-hero`, `__title` (avec `<em>` pour l'accent bleu), `__text` ; `--split` (texte + illustration) avec `__content`, `__deco`, `__media`, `__note` |
+| Section | `.pc-section` (`--pink`, `--green`, `--lavender`), `__head`, `__art` (petit dessin en couleur à la place de l'icône), `__title`, `__aside` |
 | Post du fil | `.pc-feed` > `.pc-post`, `__author`, `.pc-avatar`, `__media`, `.pc-pill-title` (`--sky`, `--green`, `--yellow`), `__text`, `__actions`, `.pc-action` (`--liked`) |
 | Règle / conseil | `.pc-rules` > `.pc-rule` (`--green`, `--sky`, `--yellow`, `--pink`), `__label`, `__text` |
-| Défi de la semaine | `.pc-challenge__highlight`, `.pc-checklist`, `.pc-check`, `.pc-sticky` |
-| Quiz | `.pc-quiz`, `__question`, `.pc-radio`, `__answer` |
+| Défi de la semaine | `.pc-challenge__highlight`, `__body`, `__art`, `.pc-checklist`, `.pc-check`, `.pc-sticky` |
+| Quiz | `.pc-quiz`, `__question`, `.pc-radio`, `__answer` ; `--split` (question à gauche, réponse à droite) avec `__form`, `__side`, `__hint`, `__deco` |
 | À retenir | `.pc-takeaways` (icône `check-circle`) |
 | Boutons | `.pc-btn`, `--pill`, `--soft` |
 | Pied de page | `.pc-footer`, `__quote`, `__brand` |
+
+## Mise en page
+
+`.pc-page` (pile de sections), `.pc-duo` (deux colonnes égales), `.pc-duo--wide` (3/5 + 2/5 dès 900 px).
+
+## Images
+
+Dans `assets/illustrations/`, reprises de la maquette : parent-child-reading (héro), building-blocks, sleeping-child, child-drawing (posts, 16/10), kids-reading-book (défi, fond retiré), trophy et bulb (titres « Défi de la semaine » et « Nos conseils », fond retiré, classe `.pc-section__art`).
+À afficher en `<img>` avec un `alt` descriptif (alt vide pour trophy et bulb, décoratifs).
 
 ## Icônes
 

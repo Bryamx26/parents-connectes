@@ -76,7 +76,7 @@ Le HTML de référence de chaque composant est dans `design-system/index.html` :
 
 ## Images
 
-Photos chaleureuses de parents et de jeunes enfants, lumière douce. Dans un post : ratio 16/10, `--pc-radius-md`, `object-fit: cover`. Pas d'enfant devant un écran mis en avant de façon positive.
+Images dans `assets/illustrations/` (reprises de la maquette). Photos chaleureuses de parents et de jeunes enfants, lumière douce. Dans un post : ratio 16/10, `--pc-radius-md`, `object-fit: cover`. Pas d'enfant devant un écran mis en avant de façon positive.
 
 ## À éviter
 

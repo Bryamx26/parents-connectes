@@ -1,4 +1,5 @@
 import Icon from './Icon.jsx';
+import { sectionArt } from '../illustrations.js';
 
 const rules = [
   { color: 'green', icon: 'fork-plate', text: "Pas d'écran pendant les repas." },
@@ -11,7 +12,7 @@ export default function Rules() {
   return (
     <section className="pc-section pc-section--pink" aria-labelledby="conseils-titre">
       <div className="pc-section__head pc-section__head--pink">
-        <span style={{ color: 'var(--pc-yellow-500)' }}><Icon name="bulb" size="lg" /></span>
+        <img className="pc-section__art" src={sectionArt.bulb} alt="" width="40" height="40" />
         <h2 className="pc-section__title" id="conseils-titre">Nos conseils</h2>
         <span className="pc-section__aside">4 règles simples à retenir !</span>
       </div>

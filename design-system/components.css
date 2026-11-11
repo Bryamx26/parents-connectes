@@ -78,10 +78,11 @@ h1, h2, h3, h4 {
 .pc-section__head--pink     { background: var(--pc-pink-200); }
 .pc-section__head--lavender { background: var(--pc-lavender-200); }
 .pc-section__title { font-size: var(--pc-text-xl); }
+.pc-section__art { width: var(--pc-icon-lg); height: var(--pc-icon-lg); flex: none; }
 .pc-section__aside { margin-left: auto; font-family: var(--pc-font-hand); font-size: var(--pc-text-md); }
 
 /* ---------- Carte de post (fil d'actualités) ---------- */
-.pc-feed { display: grid; gap: var(--pc-space-4); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.pc-feed { display: grid; gap: var(--pc-space-4); grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }
 .pc-post {
   background: var(--pc-color-surface); border: 1px solid var(--pc-color-border);
   border-radius: var(--pc-radius-lg); box-shadow: var(--pc-shadow-card);
@@ -120,7 +121,7 @@ h1, h2, h3, h4 {
 .pc-pill-title--yellow { background: var(--pc-yellow-200); }
 
 /* ---------- Carte conseil / règle ---------- */
-.pc-rules { display: grid; gap: var(--pc-space-3); grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.pc-rules { display: grid; gap: var(--pc-space-3); grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
 .pc-rule {
   border-radius: var(--pc-radius-lg); padding: var(--pc-space-4) var(--pc-space-3);
   text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--pc-space-3);
@@ -195,7 +196,7 @@ h1, h2, h3, h4 {
 .pc-footer__brand { display: flex; align-items: center; gap: var(--pc-space-2); font-weight: var(--pc-weight-bold); }
 
 /* ---------- Mise en page ---------- */
-.pc-page { display: grid; gap: var(--pc-space-8); padding: var(--pc-space-6) 0 var(--pc-space-10); }
+.pc-page { display: grid; gap: var(--pc-space-8); padding-top: var(--pc-space-6); padding-bottom: var(--pc-space-10); }
 .pc-duo { display: grid; gap: var(--pc-space-4); grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
 
 /* Illustration de post (icône sur fond pastel, quand il n'y a pas de photo) */
@@ -223,3 +224,62 @@ h1, h2, h3, h4 {
 .pc-challenge__success { margin-top: var(--pc-space-2); }
 .pc-challenge__note { text-align: right; margin: var(--pc-space-2) 0 0; }
 .pc-takeaways__cta { text-align: center; margin: var(--pc-space-4) 0 0; }
+
+/* ---------- Héro en deux colonnes (texte + illustration) ---------- */
+.pc-hero--split { display: grid; gap: var(--pc-space-4); padding: 0; background: none; border-radius: 0; }
+.pc-hero__content {
+  position: relative; display: grid; align-content: center; overflow: hidden;
+  background: var(--pc-pink-200); border-radius: var(--pc-radius-xl); padding: var(--pc-space-8) var(--pc-space-6);
+}
+.pc-hero__deco { display: none; position: absolute; left: var(--pc-space-2); bottom: var(--pc-space-2); color: var(--pc-leaf-500); }
+.pc-hero__media {
+  position: relative; margin: 0; padding: var(--pc-space-3);
+  display: flex; align-items: center; gap: var(--pc-space-2);
+  background: var(--pc-white); border-radius: var(--pc-radius-xl); box-shadow: var(--pc-shadow-card);
+}
+.pc-hero__media img { display: block; width: 70%; height: auto; border-radius: var(--pc-radius-lg); }
+.pc-hero__note {
+  flex: 1; min-width: 0;
+  font-family: var(--pc-font-hand); font-size: var(--pc-text-lg); line-height: var(--pc-leading-tight);
+  color: var(--pc-color-text); text-align: center; transform: rotate(8deg);
+}
+.pc-hero__note .pc-icon { display: block; margin: var(--pc-space-1) auto 0; color: var(--pc-color-like); }
+@media (min-width: 760px) {
+  .pc-hero--split { grid-template-columns: 3fr 2fr; }
+  .pc-hero__content { padding-left: var(--pc-space-10); padding-right: var(--pc-space-10); }
+  .pc-hero__deco { display: block; }
+}
+
+/* Duo asymétrique (ex. conseils + défi) */
+@media (min-width: 900px) { .pc-duo--wide { grid-template-columns: 3fr 2fr; } }
+
+/* Action poussée à droite dans la barre d'un post */
+.pc-action--end { margin-left: auto; min-width: 44px; min-height: 44px; justify-content: center; }
+
+/* Défi : liste + illustration */
+.pc-challenge__body { display: grid; gap: var(--pc-space-4); }
+.pc-challenge__art { margin: 0; display: grid; justify-items: center; gap: var(--pc-space-2); }
+.pc-challenge__art img { display: block; width: 100%; max-width: 260px; height: auto; }
+.pc-challenge__success { margin-top: var(--pc-space-4); }
+.pc-challenge__heart { color: var(--pc-color-like); display: inline-flex; }
+@media (min-width: 480px) {
+  .pc-challenge__body { grid-template-columns: minmax(0, 1fr) minmax(110px, 40%); align-items: center; }
+}
+
+/* Quiz : question à gauche, réponse à droite */
+.pc-quiz__form { border: 0; margin: 0; padding: 0; min-width: 0; display: grid; gap: var(--pc-space-3); align-content: start; }
+.pc-quiz__form .pc-btn { justify-self: start; }
+.pc-quiz__form .pc-quiz__question { margin-bottom: var(--pc-space-1); }
+.pc-quiz__side {
+  position: relative; display: grid; align-content: center; min-height: 140px;
+  border: 2px dashed var(--pc-lavender-200); border-radius: var(--pc-radius-md); padding: var(--pc-space-3) var(--pc-space-3) var(--pc-space-8);
+}
+.pc-quiz__side .pc-quiz__answer { background: none; padding: 0; color: var(--pc-color-text); }
+.pc-quiz__label { display: block; font-family: var(--pc-font-display); font-weight: var(--pc-weight-semibold); }
+.pc-quiz__hint { margin: 0; font-size: var(--pc-text-sm); color: var(--pc-color-text-muted); }
+.pc-quiz__deco { position: absolute; right: var(--pc-space-3); bottom: var(--pc-space-2); display: flex; align-items: center; gap: var(--pc-space-1); color: var(--pc-yellow-500); }
+.pc-quiz__deco .pc-icon { fill: currentColor; }
+@media (min-width: 560px) { .pc-quiz--split { grid-template-columns: 3fr 2fr; } }
+
+/* Pied de page : plante décorative */
+.pc-footer__deco { color: var(--pc-leaf-500); display: inline-flex; }
