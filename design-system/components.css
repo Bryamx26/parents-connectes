@@ -193,3 +193,33 @@ h1, h2, h3, h4 {
 }
 .pc-footer__quote { flex: 1; font-family: var(--pc-font-hand); font-size: var(--pc-text-lg); }
 .pc-footer__brand { display: flex; align-items: center; gap: var(--pc-space-2); font-weight: var(--pc-weight-bold); }
+
+/* ---------- Mise en page ---------- */
+.pc-page { display: grid; gap: var(--pc-space-8); padding: var(--pc-space-6) 0 var(--pc-space-10); }
+.pc-duo { display: grid; gap: var(--pc-space-4); grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
+
+/* Illustration de post (icône sur fond pastel, quand il n'y a pas de photo) */
+.pc-post__media--illus { display: grid; place-items: center; color: var(--pc-navy-700); }
+.pc-post__media--pink     { background: var(--pc-pink-100); }
+.pc-post__media--sky      { background: var(--pc-sky-100); }
+.pc-post__media--green    { background: var(--pc-green-100); }
+.pc-post__media--yellow   { background: var(--pc-yellow-100); }
+.pc-post__media--lavender { background: var(--pc-lavender-100); }
+.pc-pill-title--lavender  { background: var(--pc-lavender-200); }
+
+/* États du fil : chargement, vide, erreur */
+.pc-skeleton { min-height: 320px; border-radius: var(--pc-radius-lg); background: var(--pc-lavender-100); animation: pc-pulse 1.4s ease-in-out infinite; }
+@keyframes pc-pulse { 50% { opacity: .5; } }
+@media (prefers-reduced-motion: reduce) { .pc-skeleton { animation: none; } }
+.pc-feed-message { text-align: center; padding: var(--pc-space-6) var(--pc-space-4); border-radius: var(--pc-radius-lg); background: var(--pc-yellow-100); color: var(--pc-color-text); }
+.pc-feed-message p { margin: 0 0 var(--pc-space-3); }
+.pc-feed-message p:last-child { margin: 0; }
+
+/* Défi : carte blanche et repères */
+.pc-challenge__head { margin-bottom: var(--pc-space-2); }
+.pc-challenge__goal { margin: 0 0 var(--pc-space-4) var(--pc-space-4); }
+.pc-challenge__card { background: var(--pc-white); border-radius: var(--pc-radius-lg); padding: var(--pc-space-4); }
+.pc-challenge__lead { margin: 0 0 var(--pc-space-2); font-family: var(--pc-font-display); font-weight: var(--pc-weight-semibold); color: var(--pc-color-text); }
+.pc-challenge__success { margin-top: var(--pc-space-2); }
+.pc-challenge__note { text-align: right; margin: var(--pc-space-2) 0 0; }
+.pc-takeaways__cta { text-align: center; margin: var(--pc-space-4) 0 0; }

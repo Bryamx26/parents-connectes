@@ -95,6 +95,11 @@
     </div>
   </section>
 
+  <section>
+    <h2 class="ds-h">États du fil</h2>
+    <div class="pc-feed"><div class="pc-skeleton"></div><div class="pc-feed-message"><p>Le fil n'a pas pu se charger. Vérifiez votre connexion puis réessayez.</p><button class="pc-btn pc-btn--soft">Réessayer</button></div></div>
+  </section>
+
   <section class="pc-section pc-section--pink">
     <div class="pc-section__head pc-section__head--pink">
       <span style="color:var(--pc-yellow-500)"><svg class="pc-icon pc-icon--lg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 17.5h6M10 20.5h4"/><path d="M9 14.5c-1.6-1.2-2.5-2.9-2.5-4.8a5.5 5.5 0 0 1 11 0c0 1.9-.9 3.6-2.5 4.8v3H9z"/></svg></span>
@@ -111,21 +116,21 @@
 
   <div class="ds-two">
     <section class="pc-section pc-section--green">
-      <div class="pc-section__head" style="margin-bottom:8px">
+      <div class="pc-section__head pc-challenge__head">
         <span style="color:var(--pc-yellow-500)"><svg class="pc-icon pc-icon--lg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 4h9v5a4.5 4.5 0 0 1-9 0z"/><path d="M7.5 6H4.5v1.5A3 3 0 0 0 7.8 10.5M16.5 6h3v1.5a3 3 0 0 1-3.3 3"/><path d="M12 13.5v3.5M8.5 20.5h7l-.8-3.5H9.3z"/></svg></span>
         <h3 class="pc-section__title">Défi de la semaine</h3>
       </div>
-      <div style="margin:0 0 16px 16px"><span class="pc-challenge__highlight">Une soirée sans écran !</span></div>
-      <div style="background:#fff;border-radius:var(--pc-radius-lg);padding:16px">
-        <p style="margin:0 0 8px;font-family:var(--pc-font-display);font-weight:600;color:var(--pc-navy-900)">À la place :</p>
+      <p class="pc-challenge__goal"><span class="pc-challenge__highlight">Une soirée sans écran !</span></p>
+      <div class="pc-challenge__card">
+        <p class="pc-challenge__lead">À la place :</p>
         <ul class="pc-checklist">
           <li><label class="pc-check"><input type="checkbox" checked> Lire une histoire</label></li>
           <li><label class="pc-check"><input type="checkbox"> Faire un puzzle</label></li>
           <li><label class="pc-check"><input type="checkbox"> Dessiner</label></li>
           <li><label class="pc-check"><input type="checkbox"> Jouer à cacher un objet</label></li>
-          <li style="margin-top:8px"><label class="pc-check"><input type="checkbox"> <strong>Nous avons réussi le défi !</strong></label></li>
+          <li class="pc-challenge__success"><label class="pc-check"><input type="checkbox"> <strong>Nous avons réussi le défi !</strong></label></li>
         </ul>
-        <div style="text-align:right;margin-top:8px"><span class="pc-sticky">Petits gestes, grands bienfaits !</span></div>
+        <p class="pc-challenge__note"><span class="pc-sticky">Petits gestes, grands bienfaits !</span></p>
       </div>
     </section>
 
