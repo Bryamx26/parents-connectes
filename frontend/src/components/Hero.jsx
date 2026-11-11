@@ -10,7 +10,7 @@ export default function Hero() {
         <p className="pc-hero__text">Informer les parents pour accompagner leur enfant vers un usage équilibré des écrans.</p>
       </div>
       <figure className="pc-hero__media">
-        <img src={heroArt.src} alt={heroArt.alt} width="360" height="270" />
+        <img src={heroArt.src} alt={heroArt.alt} width="242" height="204" />
         <figcaption className="pc-hero__note">
           Plus de moments vraiment ensemble ! <Icon name="heart" size="sm" />
         </figcaption>

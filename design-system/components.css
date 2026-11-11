@@ -196,7 +196,7 @@ h1, h2, h3, h4 {
 .pc-footer__brand { display: flex; align-items: center; gap: var(--pc-space-2); font-weight: var(--pc-weight-bold); }
 
 /* ---------- Mise en page ---------- */
-.pc-page { display: grid; gap: var(--pc-space-8); padding: var(--pc-space-6) 0 var(--pc-space-10); }
+.pc-page { display: grid; gap: var(--pc-space-8); padding-top: var(--pc-space-6); padding-bottom: var(--pc-space-10); }
 .pc-duo { display: grid; gap: var(--pc-space-4); grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
 
 /* Illustration de post (icône sur fond pastel, quand il n'y a pas de photo) */
@@ -234,11 +234,12 @@ h1, h2, h3, h4 {
 .pc-hero__deco { display: none; position: absolute; left: var(--pc-space-2); bottom: var(--pc-space-2); color: var(--pc-leaf-500); }
 .pc-hero__media {
   position: relative; margin: 0; padding: var(--pc-space-3);
+  display: flex; align-items: center; gap: var(--pc-space-2);
   background: var(--pc-white); border-radius: var(--pc-radius-xl); box-shadow: var(--pc-shadow-card);
 }
-.pc-hero__media img { display: block; width: 100%; height: auto; border-radius: var(--pc-radius-lg); }
+.pc-hero__media img { display: block; width: 70%; height: auto; border-radius: var(--pc-radius-lg); }
 .pc-hero__note {
-  position: absolute; top: var(--pc-space-4); right: var(--pc-space-4); max-width: 8em;
+  flex: 1; min-width: 0;
   font-family: var(--pc-font-hand); font-size: var(--pc-text-lg); line-height: var(--pc-leading-tight);
   color: var(--pc-color-text); text-align: center; transform: rotate(8deg);
 }

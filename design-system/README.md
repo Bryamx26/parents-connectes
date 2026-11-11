@@ -69,12 +69,10 @@ Chaque pastel a une variante plus claire en `-100` pour les grands fonds.
 
 `.pc-page` (pile de sections), `.pc-duo` (deux colonnes égales), `.pc-duo--wide` (3/5 + 2/5 dès 900 px).
 
-## Illustrations
+## Images
 
-Dans `assets/illustrations/`, style dessin au crayon (trait bleu nuit tremblé, aplats pastel qui débordent un peu) :
-parent-child-reading (héro), building-blocks, sleeping-child, child-drawing (posts, format 16/10), trophy et bulb (titres « Défi de la semaine » et « Nos conseils »).
-`kids-reading-book.webp` (défi) est l'illustration de la maquette, détourée.
-À afficher en `<img>` avec un `alt` descriptif.
+Dans `assets/illustrations/`, reprises de la maquette : parent-child-reading (héro), building-blocks, sleeping-child, child-drawing (posts, 16/10), kids-reading-book (défi, fond retiré), trophy et bulb (titres « Défi de la semaine » et « Nos conseils », fond retiré, classe `.pc-section__art`).
+À afficher en `<img>` avec un `alt` descriptif (alt vide pour trophy et bulb, décoratifs).
 
 ## Icônes
 
