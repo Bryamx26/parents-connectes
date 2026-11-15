@@ -70,6 +70,7 @@ Choisir le pastel selon le thème du contenu, pas au hasard. Dans une rangée de
 | Âge, durée, visibilité | `.pc-badge` |
 | Formulaire | `.pc-form`, `.pc-field`, `.pc-input`, `.pc-alert` |
 | Quiz en plusieurs questions | `.pc-quiz-card`, `.pc-progress`, `.pc-score` |
+| Chargement | `.pc-skeleton--card` (forme d'un post), `.pc-tile--skeleton`, `.pc-activity-card--skeleton` |
 | Grille de publications | `.pc-grid` > `.pc-tile` (photo recadrée ou titre sur pastel) |
 | Détail dans une fenêtre | `<dialog class="pc-modal">` + `.pc-carousel` |
 | J'aime et commentaires | `.pc-action--liked` (`aria-pressed`), `.pc-comments` > `.pc-comment` |
