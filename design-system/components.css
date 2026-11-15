@@ -23,7 +23,8 @@ h1, h2, h3, h4 {
 }
 
 a { color: var(--pc-color-primary); }
-a:hover { color: var(--pc-color-primary-hover); }
+/* :where() annule la spécificité de a : un lien stylé par une classe (.pc-btn, .pc-nav__link…) garde sa couleur au survol */
+:where(a):hover { color: var(--pc-color-primary-hover); }
 
 .pc-container { max-width: var(--pc-container); margin: 0 auto; padding: 0 var(--pc-gutter); }
 
@@ -185,6 +186,7 @@ a.pc-action { text-decoration: none; }
 .pc-btn:hover { background: var(--pc-color-primary-hover); }
 .pc-btn--pill { border-radius: var(--pc-radius-pill); }
 .pc-btn--soft { background: var(--pc-blue-100); color: var(--pc-blue-700); }
+.pc-btn--soft:hover { background: var(--pc-sky-200); }
 
 /* ---------- Liste « À retenir » ---------- */
 .pc-takeaways { list-style: none; margin: 0; padding: var(--pc-space-4); display: grid; gap: var(--pc-space-3); background: var(--pc-white); border-radius: var(--pc-radius-lg); }
