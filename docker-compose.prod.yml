@@ -4,6 +4,7 @@
 # Aucun port publié sur l'hôte : Traefik joint les conteneurs par le réseau « cloudflare ».
 # Base et MinIO restent sur le réseau interne du projet, jamais visibles par Traefik.
 #   cp .env.example .env (changer les mots de passe) && docker compose -f docker-compose.prod.yml up -d --build
+# Publier les images (multi-plateforme) : docker buildx bake -f docker-compose.prod.yml --builder multi --push
 x-db-env: &db-env
   DB_HOST: db
   DB_NAME: ${DB_NAME:?}
@@ -12,7 +13,12 @@ x-db-env: &db-env
 
 services:
   db:
-    image: mysql:8.4
+    image: bryamx26/parents-connectes-db:1.1
+    build:
+      context: ./backend/db
+      platforms:
+        - linux/amd64
+        - linux/arm64
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${DB_NAME:?}
@@ -20,10 +26,8 @@ services:
       MYSQL_PASSWORD: ${DB_PASSWORD:?}
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?}
     volumes:
+      # schéma et droits inclus dans l'image (backend/db/Dockerfile), pas de 03-seed.sql en production
       - db-data:/var/lib/mysql
-      # pas de 03-seed.sql en production (comptes de test)
-      - ./backend/db/01-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
-      - ./backend/db/02-grants.sh:/docker-entrypoint-initdb.d/02-grants.sh:ro
     healthcheck:
       test:
         [
@@ -46,7 +50,7 @@ services:
     networks: [internal]
 
   backend:
-    image: bryamx26/parents-connectes-api:1.0
+    image: bryamx26/parents-connectes-api:1.1
     build:
       context: ./backend
       platforms:
@@ -80,7 +84,7 @@ services:
       - traefik.http.services.parents-connectes-api.loadbalancer.server.port=3000
 
   frontend:
-    image: bryamx26/parents-connectes-web:1.0
+    image: bryamx26/parents-connectes-web:1.1
     build:
       context: .
       dockerfile: frontend/Dockerfile
