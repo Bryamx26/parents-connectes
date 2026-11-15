@@ -1,29 +1,65 @@
+import { useEffect, useRef } from 'react';
 import Header from './components/Header.jsx';
-import Hero from './components/Hero.jsx';
-import Feed from './components/Feed.jsx';
-import Rules from './components/Rules.jsx';
-import Challenge from './components/Challenge.jsx';
-import Quiz from './components/Quiz.jsx';
-import Takeaways from './components/Takeaways.jsx';
+import Nav from './components/Nav.jsx';
 import Footer from './components/Footer.jsx';
+import HomePage from './pages/HomePage.jsx';
+import PublicationsPage from './pages/PublicationsPage.jsx';
+import ActivitiesPage from './pages/ActivitiesPage.jsx';
+import ActivityPage from './pages/ActivityPage.jsx';
+import ActivityEditorPage from './pages/ActivityEditorPage.jsx';
+import QuizListPage from './pages/QuizListPage.jsx';
+import QuizPlayPage from './pages/QuizPlayPage.jsx';
+import AuthPage from './pages/AuthPage.jsx';
+import { Empty } from './components/States.jsx';
+import { Link, useLocation } from './lib/router.jsx';
+
+function route(path) {
+  const m = (re) => path.match(re)?.[1];
+  let id;
+  if ((id = m(/^\/quiz\/(\d+)$/))) return ['Quiz', <QuizPlayPage key={id} id={id} />];
+  // La grille reste affichée sous le modal : même clé, pas de rechargement de la liste.
+  if ((id = m(/^\/publications\/(\d+)$/))) return ['Publication', <PublicationsPage key="publications" openId={id} />];
+  if ((id = m(/^\/activites\/(\d+)\/modifier$/))) return ["Modifier l'activité", <ActivityEditorPage key={`edit-${id}`} id={id} />];
+  if ((id = m(/^\/activites\/(\d+)$/))) return ['Activité', <ActivityPage key={id} id={id} />];
+  switch (path) {
+    case '/': return [null, <HomePage />];
+    case '/publications': return ['Publications', <PublicationsPage key="publications" />];
+    case '/activites': return ['Activités', <ActivitiesPage />];
+    case '/activites/nouvelle': return ['Nouvelle activité', <ActivityEditorPage key="new" />];
+    case '/quiz': return ['Quiz', <QuizListPage />];
+    case '/connexion': return ['Connexion', <AuthPage mode="login" />];
+    case '/inscription': return ['Créer un compte', <AuthPage mode="register" />];
+    default: return ['Page introuvable', (
+      <Empty action={<Link className="pc-btn" to="/">Retour à l'accueil</Link>}>Cette page n'existe pas ou a changé d'adresse.</Empty>
+    )];
+  }
+}
 
 export default function App() {
+  const { path } = useLocation();
+  const [title, page] = route(path);
+  const main = useRef(null);
+  const previous = useRef(path);
+
+  useEffect(() => {
+    document.title = title ? `${title} · Parents Connectés` : 'Parents Connectés';
+    // Changement de page : le focus va au contenu, pour les lecteurs d'écran et le clavier.
+    // (comparaison au chemin précédent : le double rendu de StrictMode ne doit pas voler le focus au chargement)
+    const modalOnly = [previous.current, path].every((p) => p.startsWith('/publications'));
+    if (previous.current !== path) {
+      previous.current = path;
+      if (!modalOnly) main.current?.focus({ preventScroll: true });
+    }
+  }, [path, title]);
+
   return (
-    <>
+    <div className="pc-app">
       <Header />
-      <main className="pc-container pc-page">
-        <Hero />
-        <Feed />
-        <div className="pc-duo pc-duo--wide">
-          <Rules />
-          <Challenge />
-        </div>
-        <div className="pc-duo">
-          <Quiz />
-          <Takeaways />
-        </div>
+      <Nav path={path} />
+      <main className="pc-container pc-page" ref={main} tabIndex={-1}>
+        {page}
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

@@ -39,6 +39,8 @@ Alternatives si besoin : Baloo 2 pour les titres, Caveat pour le manuscrit.
 | `--pc-red-500` | `#e0384f` | Cœur « J'aime » |
 | `--pc-green-500` | `#3aa84a` | Coches de validation |
 | `--pc-yellow-500` | `#f2c230` | Ampoule, trophée, étoiles |
+| `--pc-color-overlay` | bleu nuit 55 % | Voile du titre au survol d'une vignette |
+| `--pc-color-backdrop` | bleu nuit 60 % | Fond derrière une fenêtre modale |
 
 Chaque pastel a une variante plus claire en `-100` pour les grands fonds.
 
@@ -64,10 +66,33 @@ Chaque pastel a une variante plus claire en `-100` pour les grands fonds.
 | À retenir | `.pc-takeaways` (icône `check-circle`) |
 | Boutons | `.pc-btn`, `--pill`, `--soft` |
 | Pied de page | `.pc-footer`, `__quote`, `__brand` |
+| Navigation | `.pc-app` (réserve la place de la barre), `.pc-nav` (barre basse en mobile, rangée sous l'en-tête dès 760 px), `__link` avec `aria-current="page"` |
+| Filtres | `.pc-chips` > `.pc-chip` (état par `aria-pressed` + coche) |
+| Badges | `.pc-badges` > `.pc-badge` (`--green`, `--yellow`, `--lavender`) : âge, durée, « Privé » |
+| Formulaire | `.pc-form` (`--narrow`), `__title`, `__row`, `__actions`, `__switch`, `.pc-field` (`__label`, `__hint`, `__error`), `.pc-input`, `.pc-fieldset`, `.pc-radio--sm` |
+| Messages | `.pc-alert` (erreur), `--success`, `--info` |
+| Listes de contenu | `.pc-section__head--green` / `--sky`, `.pc-section__lead`, `.pc-section__list`, `.pc-toolbar`, `.pc-cards`, `.pc-post__detail` |
+| Quiz (pages) | `.pc-quiz-card` (`__text`), `.pc-progress` (`__bar`), `.pc-score` (`__value`) |
+| Grille de publications | `.pc-grid` (2 colonnes, 3 dès 480 px) > `.pc-tile` (`--sky`, `--yellow`, `--green`, `--lavender`, `--skeleton`), `__text`, `__overlay` (survol et focus), `__badge` ; `.pc-grid__end` |
+| Fenêtre modale | `<dialog class="pc-modal">` (`--small`), `__content`, `__close` ; `.pc-publication` (`--text`), `__media`, `__info`, `__title`, `__activity` ; `.pc-confirm` |
+| Commentaires | `.pc-comments` (`__title`, `__list`, `__form`, `__row`, `__input`, `__empty`) > `.pc-comment` (`__head`, `__text`) |
+| Carrousel et galerie | `.pc-carousel`, `__frame`, `__nav`, `__btn`, `__count` ; `.pc-lightbox` ; `.pc-gallery` > `__item` (bouton qui agrandit) |
+| Carte d'activité | `.pc-activity-grid` > `.pc-activity-card` (`--skeleton`) : `__media`, `__private`, `__body`, `__top`, `__title` (2 lignes), `__tools`, `__badges` (1 ligne), `__summary` (3 lignes), `__author`, `__cta` (toujours en bas). Gabarit fixe : largeur `--pc-card-width`, hauteur identique quel que soit le contenu |
+| Activité détaillée | `.pc-activity`, `__head`, `__title`, `__material`, `__description`, `__subtitle`, `__linked` ; `.pc-steps` > `__item`, `__number`, `__body`, `__title` |
+| Éditeur | `.pc-editor` (`__form`, `__block`, `__preview`, `__actions` collée en bas, `__cancel`) ; `.pc-step-editor` (`__list`, `__item`, `--dragging`, `--over`, `__bar`, `__handle`, `__number`, `__tools`) ; `.pc-photos` > `.pc-photo` (`__thumb`, `__body`, `__progress`), `__add` |
+| Utilitaires | `.pc-text` (texte saisi, retours à la ligne gardés), `.pc-clamp` (3 lignes), `.pc-visually-hidden`, `.pc-scroll-lock`, `.pc-icon--flip` / `--up` / `--down`, `.pc-back` |
 
 ## Mise en page
 
 `.pc-page` (pile de sections), `.pc-duo` (deux colonnes égales), `.pc-duo--wide` (3/5 + 2/5 dès 900 px).
+
+| Token | Valeur | Rôle |
+|---|---|---|
+| `--pc-container` | `1120px` | Largeur maximale du contenu |
+| `--pc-narrow` | `480px` | Formulaire seul (connexion, inscription) |
+| `--pc-card-width` | `300px` | Largeur fixe des cartes d'activité |
+| `--pc-nav-height` | `64px` | Hauteur de la barre de navigation basse, réservée par `.pc-app` |
+| `--pc-gutter` | `16px` | Marge latérale |
 
 ## Images
 

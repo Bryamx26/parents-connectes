@@ -49,6 +49,8 @@
   --pc-color-border:      var(--pc-gray-200);
   --pc-color-like:        var(--pc-red-500);
   --pc-color-success:     var(--pc-green-500);
+  --pc-color-overlay:     rgba(20, 33, 90, 0.55); /* voile du titre sur une vignette  */
+  --pc-color-backdrop:    rgba(20, 33, 90, 0.6);  /* fond derrière une fenêtre modale */
 
   /* ---------- Typographie ---------- */
   --pc-font-display: "Fredoka", "Baloo 2", "Nunito", system-ui, sans-serif;
@@ -100,5 +102,8 @@
 
   /* ---------- Mise en page ---------- */
   --pc-container: 1120px;
+  --pc-narrow: 480px;      /* formulaires seuls (connexion)          */
+  --pc-card-width: 300px;  /* largeur fixe des cartes d'activité     */
   --pc-gutter: 16px;
+  --pc-nav-height: 64px;   /* barre de navigation basse (mobile)     */
 }

@@ -65,6 +65,16 @@ Choisir le pastel selon le thème du contenu, pas au hasard. Dans une rangée de
 | À retenir | `.pc-takeaways` avec l'icône `check-circle` |
 | Bouton | `.pc-btn`, `--pill` (appel à l'action), `--soft` (secondaire) |
 | Pied de page | `.pc-footer` |
+| Navigation entre pages | `.pc-nav` (barre basse en mobile) dans `.pc-app` |
+| Filtre (âge, « les miens ») | `.pc-chips` > `.pc-chip` avec `aria-pressed` |
+| Âge, durée, visibilité | `.pc-badge` |
+| Formulaire | `.pc-form`, `.pc-field`, `.pc-input`, `.pc-alert` |
+| Quiz en plusieurs questions | `.pc-quiz-card`, `.pc-progress`, `.pc-score` |
+| Grille de publications | `.pc-grid` > `.pc-tile` (photo recadrée ou titre sur pastel) |
+| Détail dans une fenêtre | `<dialog class="pc-modal">` + `.pc-carousel` |
+| J'aime et commentaires | `.pc-action--liked` (`aria-pressed`), `.pc-comments` > `.pc-comment` |
+| Liste d'activités | `.pc-activity-grid` > `.pc-activity-card` (gabarit fixe, bouton en bas) |
+| Activité pas à pas | `.pc-activity`, `.pc-steps` ; éditeur `.pc-editor`, `.pc-step-editor`, `.pc-photos` |
 
 Le HTML de référence de chaque composant est dans `design-system/index.html` : le copier plutôt que le réinventer.
 
@@ -77,6 +87,10 @@ Le HTML de référence de chaque composant est dans `design-system/index.html` :
 ## Images
 
 Images dans `assets/illustrations/` (reprises de la maquette). Photos chaleureuses de parents et de jeunes enfants, lumière douce. Dans un post : ratio 16/10, `--pc-radius-md`, `object-fit: cover`. Pas d'enfant devant un écran mis en avant de façon positive.
+
+## Texte des utilisateurs
+
+Toujours affiché comme du texte (React l'échappe), jamais injecté en HTML ; `.pc-text` garde les retours à la ligne.
 
 ## À éviter
 

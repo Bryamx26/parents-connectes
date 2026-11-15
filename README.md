@@ -8,5 +8,5 @@ Site pour les parents d'enfants de 0 à 3 ans : fil d'actualités façon Instagr
 - `design-system/` : tokens, composants CSS et page de démo (partie visuelle)
 - `assets/icones/` : icônes SVG du site
 - `frontend/` : application React (Vite)
-- `backend/` : API Node.js / Express (MVC) et schéma MySQL
+- `backend/` : API Node.js / Express, schéma MySQL, stockage MinIO (voir `backend/README.md`, docs sur `/api-docs`)
 - `docker-compose.yml` (dev, rechargement à chaud) et `docker-compose.prod.yml` (prod) : voir `CLAUDE.md`
