@@ -1,5 +1,5 @@
 # Développement : rechargement à chaud (Vite pour le front, node --watch pour l'API).
-# docker compose up  →  front http://localhost:5173 · API http://localhost:3000 · MySQL localhost:3306
+# docker compose up  →  front http://localhost:5173 · API http://localhost:3000 (docs /api-docs) · MySQL localhost:3306
 x-db-env: &db-env
   DB_HOST: db
   DB_NAME: ${DB_NAME:-parents_connectes}
@@ -16,24 +16,44 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root}
     volumes:
       - db-data:/var/lib/mysql
-      - ./backend/db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./backend/db/01-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./backend/db/02-grants.sh:/docker-entrypoint-initdb.d/02-grants.sh:ro
+      - ./backend/db/03-seed.sql:/docker-entrypoint-initdb.d/03-seed.sql:ro
     ports: ["3306:3306"]
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD"]
       interval: 5s
       retries: 30
 
+  # Stockage S3 des images. minio/minio n'est plus publié sur Docker Hub : image remplaçable via MINIO_IMAGE.
+  minio:
+    image: ${MINIO_IMAGE:-pgsty/minio:latest}
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+    volumes:
+      - minio-data:/data
+    ports: ["9001:9001"] # console web
+
   backend:
     image: node:24-alpine
     working_dir: /app
     command: sh -c "npm install && npm run dev"
-    environment: *db-env
+    environment:
+      <<: *db-env
+      JWT_SECRET: ${JWT_SECRET:-secret-de-developpement-a-changer-0123456789}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      S3_ENDPOINT: http://minio:9000
+      S3_ACCESS_KEY: ${MINIO_ROOT_USER:-minioadmin}
+      S3_SECRET_KEY: ${MINIO_ROOT_PASSWORD:-minioadmin}
     volumes:
       - ./backend:/app
       - /app/node_modules
     ports: ["3000:3000"]
     depends_on:
       db: { condition: service_healthy }
+      minio: { condition: service_started }
 
   frontend:
     image: node:24-alpine
@@ -51,3 +71,4 @@ services:
 
 volumes:
   db-data:
+  minio-data:

@@ -14,9 +14,9 @@ export const sectionArt = { trophy, bulb };
 
 export const challengeArt = { src: kidsReading, alt: 'Deux enfants lisent un livre ensemble.' };
 
-// Image d'un post du fil, choisie d'après son icône (colonne `icon` de la table posts).
-export const postArt = {
-  family: { src: buildingBlocks, alt: 'Un papa et sa fille construisent avec des blocs en bois.' },
-  moon: { src: sleepingChild, alt: 'Une petite fille dort paisiblement avec son doudou.' },
-  puzzle: { src: childDrawing, alt: 'Une petite fille dessine avec des crayons de couleur.' },
-};
+// Illustrations des posts du fil, en rotation tant que les publications n'ont pas leurs propres images.
+export const postArt = [
+  { src: buildingBlocks, alt: 'Un papa et sa fille construisent avec des blocs en bois.' },
+  { src: sleepingChild, alt: 'Une petite fille dort paisiblement avec son doudou.' },
+  { src: childDrawing, alt: 'Une petite fille dessine avec des crayons de couleur.' },
+];

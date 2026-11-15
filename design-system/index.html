@@ -90,6 +90,11 @@
           <h4 class="pc-pill-title pc-pill-title--green">Une idée d'activité sans écran</h4>
           <p class="pc-post__text">Remplacez 20 minutes d'écran par un dessin, un puzzle ou une construction en blocs.</p>
           <div class="pc-post__actions"><button class="pc-action"><svg class="pc-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/></svg> J'aime</button><button class="pc-action"><svg class="pc-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.5c4.7 0 8.5 3 8.5 6.8s-3.8 6.7-8.5 6.7c-1 0-2-.1-2.9-.4L4.5 19.5l1.3-3.6C4.3 14.7 3.5 13.1 3.5 11.3 3.5 7.5 7.3 4.5 12 4.5z"/></svg> Commenter</button><button class="pc-action" style="margin-left:auto" aria-label="Plus"><svg class="pc-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="12" r="1.2" fill="currentColor"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/><circle cx="18.5" cy="12" r="1.2" fill="currentColor"/></svg></button></div>
+          <section class="pc-comments" aria-labelledby="demo-commentaires">
+            <h3 class="pc-comments__title" id="demo-commentaires">Commentaires (1)</h3>
+            <ul class="pc-comments__list"><li class="pc-comment"><div class="pc-comment__head"><span class="pc-post__name">Léa</span><time class="pc-post__meta">Hier</time></div><p class="pc-text pc-comment__text">Super idée, on essaie ce week-end !</p></li></ul>
+            <form class="pc-comments__form"><label class="pc-field__label" for="demo-commentaire">Votre commentaire</label><div class="pc-comments__row"><textarea id="demo-commentaire" class="pc-input pc-comments__input" rows="2"></textarea><button class="pc-btn" type="button" aria-label="Envoyer le commentaire"><svg class="pc-icon pc-icon--sm" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 3 10.5l7 3 3 7.5z"/><path d="m10 13.5 4.5-4.5"/></svg></button></div></form>
+          </section>
         </article>
       </div>
     </div>
@@ -164,6 +169,83 @@
     <div style="text-align:center;margin-top:16px">
       <a class="pc-btn pc-btn--pill" href="#">Moins d'écrans, plus de moments qui comptent ! <svg class="pc-icon pc-icon--sm" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/></svg></a>
     </div>
+  </section>
+
+  <section>
+    <h2 class="ds-h">Navigation, filtres, badges</h2>
+    <nav class="pc-nav" style="position:static" aria-label="Démo navigation">
+      <a class="pc-nav__link" href="#" aria-current="page">Accueil</a>
+      <a class="pc-nav__link" href="#">Publications</a>
+      <a class="pc-nav__link" href="#">Activités</a>
+      <a class="pc-nav__link" href="#">Quiz</a>
+    </nav>
+    <div class="pc-chips" style="margin-top:16px">
+      <button class="pc-chip" type="button" aria-pressed="false">Tous les âges</button>
+      <button class="pc-chip" type="button" aria-pressed="true">6 – 12 mois</button>
+    </div>
+    <div class="pc-badges">
+      <span class="pc-badge pc-badge--green">6 – 12 mois</span>
+      <span class="pc-badge">10 min</span>
+      <span class="pc-badge pc-badge--yellow">Privé</span>
+      <span class="pc-badge pc-badge--lavender">Quiz</span>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="ds-h">Formulaire et messages</h2>
+    <form class="pc-form pc-form--narrow">
+      <h3 class="pc-form__title">Connexion</h3>
+      <p class="pc-alert" role="alert">L'e-mail ou le mot de passe ne correspond pas. Vérifiez-les puis réessayez.</p>
+      <p class="pc-alert pc-alert--success">Votre publication est enregistrée, merci du partage !</p>
+      <div class="pc-field">
+        <label class="pc-field__label" for="ds-email">Adresse e-mail</label>
+        <input class="pc-input" id="ds-email" type="email" aria-describedby="ds-email-hint">
+        <p class="pc-field__hint" id="ds-email-hint">Celle utilisée à l'inscription.</p>
+      </div>
+      <div class="pc-field">
+        <label class="pc-field__label" for="ds-pass">Mot de passe</label>
+        <input class="pc-input" id="ds-pass" type="password" aria-invalid="true" aria-describedby="ds-pass-err">
+        <p class="pc-field__error" id="ds-pass-err">8 caractères minimum.</p>
+      </div>
+      <fieldset class="pc-fieldset">
+        <legend>Qui peut voir ce contenu ?</legend>
+        <label class="pc-radio pc-radio--sm"><input type="radio" name="ds-vis" checked> Tout le monde</label>
+        <label class="pc-radio pc-radio--sm"><input type="radio" name="ds-vis"> Moi seulement</label>
+      </fieldset>
+      <div class="pc-form__actions">
+        <button class="pc-btn" type="button">Se connecter</button>
+        <button class="pc-btn pc-btn--soft" type="button">Annuler</button>
+      </div>
+      <p class="pc-form__switch">Pas encore de compte ? <a href="#">Créer un compte</a></p>
+    </form>
+  </section>
+
+  <section>
+    <h2 class="ds-h">Quiz : carte, progression, score</h2>
+    <div class="ds-two">
+      <article class="pc-quiz-card">
+        <h3 class="pc-pill-title pc-pill-title--lavender">Le sommeil des tout-petits</h3>
+        <p class="pc-quiz-card__text">Trois questions pour faire le point, sans jugement.</p>
+        <a class="pc-btn" href="#">Commencer</a>
+      </article>
+      <div class="pc-quiz">
+        <div class="pc-progress"><span>Question 2 sur 3</span><div class="pc-progress__bar" aria-hidden="true"><span style="width:66%"></span></div></div>
+        <div class="pc-score"><p class="pc-score__value">2 / 3</p><p>Merci d'avoir participé !</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="ds-h">Grille de publications et étapes</h2>
+    <ul class="pc-grid" style="max-width:420px">
+      <li><a class="pc-tile" href="#"><span class="pc-tile__text">Notre bâton de pluie</span></a></li>
+      <li><a class="pc-tile pc-tile--sky" href="#"><span class="pc-tile__text">Un moment calme</span></a></li>
+      <li><a class="pc-tile pc-tile--yellow" href="#"><span class="pc-tile__text">Idée du jour</span></a></li>
+    </ul>
+    <ol class="pc-steps" style="margin-top:16px">
+      <li class="pc-steps__item"><span class="pc-steps__number" aria-hidden="true">1</span>
+        <div class="pc-steps__body"><h3 class="pc-steps__title">Préparer le rouleau</h3><p class="pc-text">Fermez une extrémité avec du papier et du scotch.</p></div></li>
+    </ol>
   </section>
 
   <section>
