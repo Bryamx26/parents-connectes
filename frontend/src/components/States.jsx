@@ -1,8 +1,25 @@
 // États de chargement, vide et erreur, communs à toutes les listes.
+// Squelette en forme de carte : la page garde sa mise en page pendant le chargement.
+export function Skeleton({ media = true }) {
+  return (
+    <div className="pc-skeleton pc-skeleton--card" aria-hidden="true">
+      <div className="pc-skeleton__head">
+        <span className="pc-skeleton__circle" />
+        <span className="pc-skeleton__line pc-skeleton__line--short" />
+      </div>
+      {media && <span className="pc-skeleton__media" />}
+      <span className="pc-skeleton__line pc-skeleton__line--title" />
+      <span className="pc-skeleton__line" />
+      <span className="pc-skeleton__line pc-skeleton__line--short" />
+    </div>
+  );
+}
+
 export function Loading({ label, count = 3 }) {
   return (
-    <div className="pc-cards" aria-busy="true" aria-label={label}>
-      {Array.from({ length: count }, (_, i) => <div key={i} className="pc-skeleton" />)}
+    <div className="pc-cards" role="status" aria-busy="true">
+      <span className="pc-visually-hidden">{label}…</span>
+      {Array.from({ length: count }, (_, i) => <Skeleton key={i} />)}
     </div>
   );
 }

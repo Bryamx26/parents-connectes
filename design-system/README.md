@@ -73,6 +73,7 @@ Chaque pastel a une variante plus claire en `-100` pour les grands fonds.
 | Messages | `.pc-alert` (erreur), `--success`, `--info` |
 | Listes de contenu | `.pc-section__head--green` / `--sky`, `.pc-section__lead`, `.pc-section__list`, `.pc-toolbar`, `.pc-cards`, `.pc-post__detail` |
 | Quiz (pages) | `.pc-quiz-card` (`__text`), `.pc-progress` (`__bar`), `.pc-score` (`__value`) |
+| Chargement | `.pc-skeleton` (bloc qui pulse) ; `--card` en forme de post : `__head`, `__circle`, `__media`, `__line` (`--title`, `--short`) |
 | Grille de publications | `.pc-grid` (2 colonnes, 3 dès 480 px) > `.pc-tile` (`--sky`, `--yellow`, `--green`, `--lavender`, `--skeleton`), `__text`, `__overlay` (survol et focus), `__badge` ; `.pc-grid__end` |
 | Fenêtre modale | `<dialog class="pc-modal">` (`--small`), `__content`, `__close` ; `.pc-publication` (`--text`), `__media`, `__info`, `__title`, `__activity` ; `.pc-confirm` |
 | Commentaires | `.pc-comments` (`__title`, `__list`, `__form`, `__row`, `__input`, `__empty`) > `.pc-comment` (`__head`, `__text`) |

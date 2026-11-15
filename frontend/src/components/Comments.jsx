@@ -48,7 +48,13 @@ export default function Comments({ publicationId }) {
       </h3>
 
       {comments.status === 'error' && <LoadError onRetry={comments.reload}>Les commentaires n'ont pas pu se charger.</LoadError>}
-      {comments.status === 'loading' && !comments.data && <div className="pc-skeleton pc-comments__skeleton" aria-busy="true" aria-label="Chargement des commentaires" />}
+      {comments.status === 'loading' && !comments.data && (
+        <div className="pc-comment" role="status" aria-busy="true">
+          <span className="pc-visually-hidden">Chargement des commentaires…</span>
+          <span className="pc-skeleton__line pc-skeleton__line--short" aria-hidden="true" />
+          <span className="pc-skeleton__line pc-comments__skeleton" aria-hidden="true" />
+        </div>
+      )}
       {comments.status === 'ready' && list.length === 0 && <p className="pc-comments__empty">Pas encore de commentaire : laissez le premier mot doux.</p>}
 
       {list.length > 0 && (
