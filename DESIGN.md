@@ -76,6 +76,7 @@ Choisir le pastel selon le thème du contenu, pas au hasard. Dans une rangée de
 | J'aime et commentaires | `.pc-action--liked` (`aria-pressed`), `.pc-comments` > `.pc-comment` |
 | Liste d'activités | `.pc-activity-grid` > `.pc-activity-card` (gabarit fixe, bouton en bas) |
 | Activité pas à pas | `.pc-activity`, `.pc-steps` ; éditeur `.pc-editor`, `.pc-step-editor`, `.pc-photos` |
+| Page de texte (À propos, légal) | `.pc-prose` (`__updated`, `__todo`) ; liens du pied de page `.pc-footer__nav` > `.pc-footer__links` |
 
 Le HTML de référence de chaque composant est dans `design-system/index.html` : le copier plutôt que le réinventer.
 

@@ -10,6 +10,8 @@ import ActivityEditorPage from './pages/ActivityEditorPage.jsx';
 import QuizListPage from './pages/QuizListPage.jsx';
 import QuizPlayPage from './pages/QuizPlayPage.jsx';
 import AuthPage from './pages/AuthPage.jsx';
+import AboutPage from './pages/AboutPage.jsx';
+import { LegalNoticePage, PrivacyPage, CookiesPage, TermsPage } from './pages/LegalPages.jsx';
 import { Empty } from './components/States.jsx';
 import { Link, useLocation } from './lib/router.jsx';
 
@@ -29,6 +31,11 @@ function route(path) {
     case '/quiz': return ['Quiz', <QuizListPage />];
     case '/connexion': return ['Connexion', <AuthPage mode="login" />];
     case '/inscription': return ['Créer un compte', <AuthPage mode="register" />];
+    case '/a-propos': return ['À propos', <AboutPage />];
+    case '/mentions-legales': return ['Mentions légales', <LegalNoticePage />];
+    case '/confidentialite': return ['Politique de confidentialité', <PrivacyPage />];
+    case '/cookies': return ['Politique de cookies', <CookiesPage />];
+    case '/cgu': return ["Conditions générales d'utilisation", <TermsPage />];
     default: return ['Page introuvable', (
       <Empty action={<Link className="pc-btn" to="/">Retour à l'accueil</Link>}>Cette page n'existe pas ou a changé d'adresse.</Empty>
     )];

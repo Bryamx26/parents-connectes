@@ -12,6 +12,7 @@ export default function Header() {
         <div className="pc-header__tagline">Des repères aujourd'hui pour un meilleur demain !</div>
       </div>
       <div className="pc-header__actions">
+        <Link className="pc-icon-btn pc-header__narrow" to="/a-propos" aria-label="À propos"><Icon name="family" /></Link>
         <Link className="pc-icon-btn" to="/connexion" aria-label={user ? `Mon compte (${user.name})` : 'Se connecter'}>
           <Icon name="user" />
         </Link>
