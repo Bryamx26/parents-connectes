@@ -333,7 +333,11 @@ main:focus { outline: none; }
 }
 .pc-nav__link:hover { background: var(--pc-sky-100); }
 .pc-nav__link[aria-current="page"] { background: var(--pc-blue-100); color: var(--pc-blue-700); }
+/* Lien secondaire : seulement dans la rangée du bureau ; en mobile il passe dans l'en-tête (5 liens max en barre basse). */
+.pc-nav__link--wide { display: none; }
 @media (min-width: 760px) {
+  .pc-nav__link--wide { display: flex; }
+  .pc-header__narrow { display: none; }
   .pc-app { padding-bottom: 0; }
   .pc-nav { position: static; justify-content: center; gap: var(--pc-space-2); box-shadow: none; border-top: 0; border-bottom: 1px solid var(--pc-color-border); }
   .pc-nav__link { flex: none; max-width: none; flex-direction: row; gap: var(--pc-space-2); padding: var(--pc-space-2) var(--pc-space-4); font-size: var(--pc-text-sm); }
@@ -620,3 +624,17 @@ textarea.pc-input { min-height: 120px; resize: vertical; }
 .pc-comments__row { display: flex; gap: var(--pc-space-2); align-items: flex-end; }
 textarea.pc-comments__input { min-height: 44px; flex: 1; min-width: 0; }
 .pc-comments__row .pc-btn { min-width: 44px; min-height: 44px; padding-inline: var(--pc-space-3); }
+
+/* ---------- Pages de texte (À propos, pages légales) ---------- */
+.pc-prose { display: grid; gap: var(--pc-space-3); max-width: 70ch; color: var(--pc-color-text); line-height: 1.6; }
+.pc-prose h2 { margin: var(--pc-space-4) 0 0; font-size: var(--pc-text-lg); color: var(--pc-navy-900); }
+.pc-prose p, .pc-prose ul, .pc-prose dl { margin: 0; }
+.pc-prose ul { padding-left: var(--pc-space-5); display: grid; gap: var(--pc-space-1); }
+.pc-prose dt { font-weight: var(--pc-weight-bold); }
+.pc-prose dd { margin: 0 0 var(--pc-space-2); }
+.pc-prose a { color: var(--pc-blue-700); overflow-wrap: anywhere; }
+.pc-prose__updated { font-size: var(--pc-text-sm); color: var(--pc-gray-500); }
+.pc-prose__todo { padding: var(--pc-space-1) var(--pc-space-2); border-radius: var(--pc-radius-sm); background: var(--pc-yellow-200); font-weight: var(--pc-weight-bold); }
+.pc-footer__nav { flex-basis: 100%; }
+.pc-footer__links { display: flex; flex-wrap: wrap; gap: var(--pc-space-1) var(--pc-space-4); margin: 0; padding: 0; list-style: none; font-size: var(--pc-text-sm); }
+.pc-footer__links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--pc-blue-700); }
