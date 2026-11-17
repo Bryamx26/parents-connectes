@@ -44,15 +44,16 @@ a { color: var(--pc-color-primary); }
   background: var(--pc-color-primary);
   color: var(--pc-color-on-primary);
   padding: var(--pc-space-3) var(--pc-gutter);
-  display: flex; align-items: center; gap: var(--pc-space-4);
+  /* 3 colonnes égales autour du logo : il reste centré quel que soit le nombre d'icônes de chaque côté */
+  display: grid; grid-template-columns: minmax(44px, 1fr) auto minmax(44px, 1fr); align-items: center; gap: var(--pc-space-4);
 }
-.pc-header__brand { flex: 1; text-align: center; }
+.pc-header__brand { grid-column: 2; display: grid; text-align: center; color: inherit; text-decoration: none; }
 .pc-header__logo {
   font-family: var(--pc-font-display); font-weight: var(--pc-weight-semibold);
   font-size: clamp(1.6rem, 5vw, var(--pc-text-3xl)); color: var(--pc-white); line-height: 1;
 }
 .pc-header__tagline { font-family: var(--pc-font-hand); font-size: var(--pc-text-sm); opacity: .95; }
-.pc-header__actions { display: flex; gap: var(--pc-space-2); }
+.pc-header__actions { grid-column: 3; justify-self: end; display: flex; gap: var(--pc-space-2); }
 .pc-icon-btn {
   display: inline-grid; place-items: center; width: 44px; height: 44px;
   border: 0; border-radius: var(--pc-radius-pill); background: transparent; color: inherit; cursor: pointer;

@@ -108,7 +108,7 @@ Dans `assets/illustrations/`, reprises de la maquette : parent-child-reading (h�
 - `stroke="currentColor"` : elles prennent la couleur du texte parent
 - À intégrer en ligne (inline) pour pouvoir les colorer, ou via `<img>` (elles seront alors noires)
 
-Liste : baby, bell, book, bulb, calendar, check, check-circle, checkbox, checkbox-checked, chevron-right, clock, close, comment, family, fork-plate, globe, heart, home, leaf, megaphone, menu, moon, more, play, puzzle, question, radio, radio-checked, screen-off, search, send, smile, sparkle, star, trophy, user.
+Liste : baby, bell, book, bulb, calendar, check, check-circle, checkbox, checkbox-checked, chevron-right, clock, close, comment, family, fork-plate, globe, heart, home, info, leaf, megaphone, menu, moon, more, play, puzzle, question, radio, radio-checked, screen-off, search, send, smile, sparkle, star, trophy, user.
 
 Pour un cœur plein (« J'aime » activé) : ajouter `fill: currentColor` (voir `.pc-action--liked`).
 

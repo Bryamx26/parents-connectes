@@ -22,7 +22,7 @@ Les scripts de `db/` ne sont joués qu'au **premier démarrage** (volume vide). 
 docker compose -f docker-compose.prod.yml up -d --build
 ```
 
-En production (Cloudflare Tunnel -> Traefik, réseau externe `cloudflare`), les données de test ne sont pas chargées et aucun port n'est publié : Traefik route `FRONT_HOST` vers nginx (qui relaie `/api`) et `API_HOST` directement vers l'API (documentation sur `https://API_HOST/api-docs`). Le premier admin se crée en passant un compte au rôle `admin` en base (`UPDATE users SET role = 'admin' WHERE email = ...`, en root).
+En production (Cloudflare Tunnel -> Traefik, réseau externe `cloudflare`), les données de test ne sont pas chargées et aucun port n'est publié : Traefik route `FRONT_HOST` vers nginx (qui relaie `/api`) et `API_HOST` directement vers l'API (documentation sur `https://API_HOST/api-docs`). Le compte admin se crée avec `ADMINMAIL` et `ADMINPASSWORD` dans `.env` : à chaque démarrage, l'API crée ce compte ou le repasse `admin` avec ce mot de passe.
 
 ## Scripts SQL (`db/`)
 
