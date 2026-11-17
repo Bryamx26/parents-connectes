@@ -62,6 +62,12 @@ export default function AuthPage({ mode }) {
         <Field id="password" type="password" label="Mot de passe" required minLength={register ? 8 : 1} maxLength={128}
           autoComplete={register ? 'new-password' : 'current-password'}
           hint={register ? '8 caractères minimum.' : undefined} error={errors.password} />
+        {register && (
+          <p className="pc-form__switch">
+            En créant un compte, vous acceptez les <Link to="/cgu">conditions d'utilisation</Link> et confirmez
+            avoir lu la <Link to="/confidentialite">politique de confidentialité</Link>.
+          </p>
+        )}
         <button className="pc-btn" type="submit" disabled={state.busy}>
           {state.busy ? 'Un instant…' : register ? 'Créer mon compte' : 'Se connecter'}
         </button>

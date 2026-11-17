@@ -9,7 +9,7 @@ export default function Nav({ path }) {
     { to: '/publications', icon: 'send', label: 'Publications' },
     { to: '/activites', icon: 'puzzle', label: 'Activités' },
     { to: '/quiz', icon: 'question', label: 'Quiz' },
-    { to: '/a-propos', icon: 'family', label: 'À propos', wide: true },
+    { to: '/a-propos', icon: 'info', label: 'À propos', wide: true },
     { to: '/connexion', icon: 'user', label: user ? 'Compte' : 'Connexion', match: ['/connexion', '/inscription'] },
   ];
   const current = (l) => (l.match ? l.match.includes(path) : l.to === '/' ? path === '/' : path.startsWith(l.to));

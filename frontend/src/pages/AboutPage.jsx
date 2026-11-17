@@ -3,6 +3,7 @@ import { Link } from '../lib/router.jsx';
 
 // Liens repris tels quels de la page Contact du site Vitamines.
 const EMAIL = 'rishingsilvabryam@gmail.com';
+const DESIGNER_EMAIL = 'rajaemakhfi6@icloud.com';
 const LINKEDIN = 'https://www.linkedin.com/in/bryam-rishing-silva-5a291b352';
 
 export default function AboutPage() {
@@ -21,7 +22,7 @@ export default function AboutPage() {
         <h2>Crédits</h2>
         <dl>
           <dt>Conçu par</dt>
-          <dd>Rajae Makhfi</dd>
+          <dd>Rajae Makhfi · <a href={`mailto:${DESIGNER_EMAIL}`}>{DESIGNER_EMAIL}</a></dd>
           <dt>Développé par</dt>
           <dd>Bryam Rishing Silva</dd>
         </dl>

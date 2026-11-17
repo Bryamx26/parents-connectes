@@ -27,6 +27,8 @@ export const env = {
   },
   jwtSecret,
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || '1h',
+  // Compte admin créé ou mis à jour au démarrage (voir ensureAdmin) ; vide = rien.
+  admin: { email: process.env.ADMINMAIL || '', password: process.env.ADMINPASSWORD || '' },
   googleClientId: process.env.GOOGLE_CLIENT_ID || '',
   corsOrigins: (process.env.CORS_ORIGIN || '').split(',').map((s) => s.trim()).filter(Boolean),
   trustProxy: parseTrustProxy(process.env.TRUST_PROXY),

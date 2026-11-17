@@ -4,6 +4,7 @@ import { OAuth2Client } from 'google-auth-library';
 import { env } from '../config/env.js';
 import * as users from '../repositories/userRepository.js';
 import { conflict, HttpError, unauthorized } from '../utils/httpError.js';
+import { registerBody } from '../validators/schemas.js';
 
 // Vérifié quand l'e-mail est inconnu, pour que la réponse prenne le même temps qu'un mauvais mot de passe.
 const DUMMY_HASH = '$argon2id$v=19$m=65536,t=3,p=4$xCTRjNVkV6V6rqDZ54absQ$7vhGSHfm08s0aENWpAW5WwPIEhbKnt3vpzSI+ubkhs0';
@@ -15,6 +16,20 @@ export const hashPassword = (password) => argon2.hash(password, { type: argon2.a
 function session(user) {
   const token = jwt.sign({ sub: String(user.id) }, env.jwtSecret, { algorithm: 'HS256', expiresIn: env.jwtExpiresIn });
   return { token, user };
+}
+
+// ADMINMAIL / ADMINPASSWORD font foi : à chaque démarrage le compte est créé, ou repasse admin avec ce mot de passe.
+export async function ensureAdmin({ email, password } = env.admin) {
+  if (!email && !password) return null;
+  if (!email || !password) throw new Error('ADMINMAIL et ADMINPASSWORD vont ensemble');
+  const admin = registerBody.safeParse({ name: 'Administrateur', email, password });
+  if (!admin.success) throw new Error('ADMINMAIL doit être un e-mail et ADMINPASSWORD faire 8 à 128 caractères');
+  const passwordHash = await hashPassword(admin.data.password);
+  const row = await users.findCredentialsByEmail(admin.data.email);
+  const id = row?.id ?? await users.create({ ...admin.data, passwordHash });
+  if (row) await users.update(id, { passwordHash });
+  await users.setRole(id, 'admin');
+  return id;
 }
 
 export async function register({ name, email, password }) {

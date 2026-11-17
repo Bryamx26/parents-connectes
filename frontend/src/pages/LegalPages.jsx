@@ -58,7 +58,7 @@ export function LegalNoticePage() {
 
       <h2>Crédits</h2>
       <ul>
-        <li>Design : Rajae Makhfi</li>
+        <li>Design : Rajae Makhfi (<a href="mailto:rajaemakhfi6@icloud.com">rajaemakhfi6@icloud.com</a>)</li>
         <li>Développement : Bryam Rishing Silva</li>
         <li>Polices : Fredoka, Nunito et Patrick Hand (licence SIL Open Font License), servies par Google Fonts</li>
       </ul>

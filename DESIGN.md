@@ -55,7 +55,7 @@ Choisir le pastel selon le thème du contenu, pas au hasard. Dans une rangée de
 
 | Besoin | Composant |
 |---|---|
-| En-tête | `.pc-header` (accueil à gauche, logo + slogan au centre, recherche / notifications / menu à droite) |
+| En-tête | `.pc-header` (logo + slogan au centre, lien vers l'accueil ; à droite seulement ce qui n'est pas dans `.pc-nav`) |
 | Bandeau d'intro | `.pc-hero` |
 | Section avec titre | `.pc-section` + `.pc-section__head` (icône `--lg`, titre, `__aside` manuscrit) |
 | Post du fil | `.pc-feed` > `.pc-post` (auteur, média, `.pc-pill-title`, texte, actions J'aime / Commenter / plus) |
